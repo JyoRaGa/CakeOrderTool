@@ -12,7 +12,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="CakeBackgroundBlur.jpg"  />
+            <ImageBrush ImageSource="Images\CakeBackgroundBlur.jpg"  />
         </Grid.Background>
         <Grid Name="ButtonGrid"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
             <Grid.RowDefinitions>
@@ -43,7 +43,7 @@
                 Select a cake filling
             </Button>
 
-            <Image Grid.Row="5" Name="SelectedCakeImage" Margin="2" Source="CakeBackground.jpg"></Image>
+            <Image Grid.Row="5" Name="SelectedCakeImage" Margin="2" Source="Images\CakeBackground.jpg"></Image>
           </Grid>
 
         <ListView x:Name="ImageList" Grid.Column="1" Grid.Row="0"  >

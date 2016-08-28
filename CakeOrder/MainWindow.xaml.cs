@@ -42,31 +42,31 @@ namespace CakeOrder
             InitializeComponent();
 
             Image i = new Image();
-            i.Source = new BitmapImage(new Uri(@"D:\Documents\visual studio 2015\Projects\CakeOrder\CakeOrder\Images\balloon_1.jpg"));
+            i.Source = new BitmapImage(new Uri(@"Images\balloon_1.jpg", UriKind.Relative));
             ImageList.Items.Add(new Cake("Balloon Cake", i));
 
             i = new Image();
-            i.Source = new BitmapImage(new Uri(@"D:\Documents\visual studio 2015\Projects\CakeOrder\CakeOrder\Images\Cap_and_Gown.jpg"));
+            i.Source = new BitmapImage(new Uri(@"..\..\Images\Cap_and_Gown.jpg", UriKind.Relative));
             ImageList.Items.Add(new Cake("Cape and Gown Cake", i));
 
             i = new Image();
-            i.Source = new BitmapImage(new Uri(@"D:\Documents\visual studio 2015\Projects\CakeOrder\CakeOrder\Images\celebration_1.jpg"));
+            i.Source = new BitmapImage(new Uri(@"..\..\Images\celebration_1.jpg", UriKind.Relative));
             ImageList.Items.Add(new Cake("Celebration Cake", i));
 
             i = new Image();
-            i.Source = new BitmapImage(new Uri(@"D:\Documents\visual studio 2015\Projects\CakeOrder\CakeOrder\Images\cream-cone.jpg"));
+            i.Source = new BitmapImage(new Uri(@"..\..\Images\cream-cone.jpg", UriKind.Relative));
             ImageList.Items.Add(new Cake("Cream Cone Cake", i));
 
             i = new Image();
-            i.Source = new BitmapImage(new Uri(@"D:\Documents\visual studio 2015\Projects\CakeOrder\CakeOrder\Images\FlowerGardenCake.jpg"));
+            i.Source = new BitmapImage(new Uri(@"..\..\Images\FlowerGardenCake.jpg", UriKind.Relative));
             ImageList.Items.Add(new Cake("Garden Cake", i));
 
             i = new Image();
-            i.Source = new BitmapImage(new Uri(@"D:\Documents\visual studio 2015\Projects\CakeOrder\CakeOrder\Images\Mini-Cupcake-Cake.jpg"));
+            i.Source = new BitmapImage(new Uri(@"..\..\Images\Mini-Cupcake-Cake.jpg", UriKind.Relative));
             ImageList.Items.Add(new Cake("Cupcake Cake", i));
 
             i = new Image();
-            i.Source = new BitmapImage(new Uri(@"D:\Documents\visual studio 2015\Projects\CakeOrder\CakeOrder\Images\Oreo_Cookie_Sandwich_Cake.png"));
+            i.Source = new BitmapImage(new Uri(@"..\..\Images\Oreo_Cookie_Sandwich_Cake.png", UriKind.Relative));
             ImageList.Items.Add(new Cake("Oreo Sandwich Cake", i));
         }
 

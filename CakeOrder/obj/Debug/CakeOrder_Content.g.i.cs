@@ -8,6 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cakebackgroundblur.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cakebackground.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cakebackgroundblur.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/balloon_1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cap_and_gown.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/celebration_1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cream-cone.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/floral-cake_1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/flowergardencake.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/mini-cupcake-cake.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/oreo_cookie_sandwich_cake.png")]
 
 

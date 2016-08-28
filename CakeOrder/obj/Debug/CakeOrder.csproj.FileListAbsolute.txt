@@ -13,3 +13,29 @@ D:\documents\visual studio 2015\Projects\CakeOrder\CakeOrder\obj\Debug\CakeOrder
 D:\documents\visual studio 2015\Projects\CakeOrder\CakeOrder\obj\Debug\CakeOrder.pdb
 D:\documents\visual studio 2015\Projects\CakeOrder\CakeOrder\obj\Debug\CakeOrder.csprojResolveAssemblyReference.cache
 D:\documents\visual studio 2015\Projects\CakeOrder\CakeOrder\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\CakeOrder.exe.config
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder.exe
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder.pdb
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\CakeOrder.exe
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\CakeOrder.pdb
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder.csprojResolveAssemblyReference.cache
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\MainWindow.g.cs
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\App.g.cs
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder_MarkupCompile.cache
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder_MarkupCompile.lref
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\MainWindow.baml
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder.g.resources
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder.Properties.Resources.resources
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder.csproj.GenerateResource.Cache
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\CakeBackgroundBlur.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\obj\Debug\CakeOrder_Content.g.cs
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\CakeBackground.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\balloon_1.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\Cap_and_Gown.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\celebration_1.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\cream-cone.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\floral-cake_1.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\FlowerGardenCake.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\Mini-Cupcake-Cake.jpg
+D:\gitProjects\CakeOrderTool\CakeOrder\bin\Debug\Images\Oreo_Cookie_Sandwich_Cake.png

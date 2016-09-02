@@ -56,6 +56,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DesignPage.xaml.cs">
+      <DependentUpon>DesignPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShapePage.xaml.cs">
+      <DependentUpon>ShapePage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DesignPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,6 +79,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ShapePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -148,113 +162,113 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Colors\CustomBlue.jpg" >
+    <Content Include="Images\Colors\CustomBlue.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\CustomChocolate.jpg" >
+    <Content Include="Images\Colors\CustomChocolate.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\CustomGreen.jpg" >
+    <Content Include="Images\Colors\CustomGreen.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\CustomOffWhite.jpg" >
+    <Content Include="Images\Colors\CustomOffWhite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\CustomPink.jpg" >
+    <Content Include="Images\Colors\CustomPink.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\CustomWhite.jpg" >
+    <Content Include="Images\Colors\CustomWhite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\CustomYellow.jpg" >
+    <Content Include="Images\Colors\CustomYellow.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RectBlue.jpg" >
+    <Content Include="Images\Colors\RectBlue.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RectChocolate.jpg" >
+    <Content Include="Images\Colors\RectChocolate.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RectGreen.jpg" >
+    <Content Include="Images\Colors\RectGreen.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RectOffWhite.jpg" >
+    <Content Include="Images\Colors\RectOffWhite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RectPink.jpg" >
+    <Content Include="Images\Colors\RectPink.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RectWhite.jpg" >
+    <Content Include="Images\Colors\RectWhite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RectYellow.jpg" >
+    <Content Include="Images\Colors\RectYellow.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RoundBlue.jpg" >
+    <Content Include="Images\Colors\RoundBlue.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RoundChocolate.jpg" >
+    <Content Include="Images\Colors\RoundChocolate.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RoundGreen.jpg" >
+    <Content Include="Images\Colors\RoundGreen.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RoundOffWhite.jpg" >
+    <Content Include="Images\Colors\RoundOffWhite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RoundPink.jpg" >
+    <Content Include="Images\Colors\RoundPink.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RoundWhite.jpg" >
+    <Content Include="Images\Colors\RoundWhite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\RoundYellow.jpg" >
+    <Content Include="Images\Colors\RoundYellow.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\SquareBlue.jpg" >
+    <Content Include="Images\Colors\SquareBlue.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\SquareChocolate.jpg" >
+    <Content Include="Images\Colors\SquareChocolate.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\SquareGreen.jpg" >
+    <Content Include="Images\Colors\SquareGreen.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\SquareOffWhite.jpg" >
+    <Content Include="Images\Colors\SquareOffWhite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\SquarePink.jpg" >
+    <Content Include="Images\Colors\SquarePink.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\SquareWhite.jpg" >
+    <Content Include="Images\Colors\SquareWhite.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Colors\SquareYellow.jpg" >
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\Flavors\Chocolate.jpg" >
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Flavors\Strawberry.jpg" >
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Flavors\Vanilla.jpg" >
+    <Content Include="Images\Colors\SquareYellow.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Shapes\Custom.jpg" >
+    <Content Include="Images\Flavors\Chocolate.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Shapes\Rectangle.jpg" >
+    <Content Include="Images\Flavors\Strawberry.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Shapes\Round.jpg" >
+    <Content Include="Images\Flavors\Vanilla.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Shapes\Square.jpg" >
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Shapes\Custom.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Shapes\Rectangle.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Shapes\Round.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Shapes\Square.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -16,31 +16,25 @@ using CakeOrder.DataClasses;
 
 namespace CakeOrder
 {
-
-    //public class Cake
-    //{
-    //    public Cake(string name, Image img) { Name = name; Image = img; }
-    //    public string Name { get; set; }
-
-    //    public string Shape { get; set; }
-
-    //    public string Color { get; set; }
-
-    //    public string Size { get; set; }
-
-    //    public string Filling { get; set; }
-
-    //    public Image Image { get; set; }
-    //}
-
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DesignPage.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class DesignPage : Page
     {
-        public MainWindow()
+        public DesignPage()
         {
             InitializeComponent();
+
+            foreach (CakeDesign c in DesignLists.DefaultDesignList)
+            {
+                c.CakeImage.Source = new BitmapImage(new Uri(c.ImagePath, UriKind.Relative));
+                ImageList.Items.Add(c);
+            }
+        }
+
+        private void ItemChecked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

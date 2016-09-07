@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CakeOrder.DataClasses;
 
 namespace CakeOrder
 {
@@ -23,6 +24,10 @@ namespace CakeOrder
         public ShapePage()
         {
             InitializeComponent();
+        }
+        private void ItemChecked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

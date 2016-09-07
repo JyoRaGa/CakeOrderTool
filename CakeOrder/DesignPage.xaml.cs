@@ -36,5 +36,11 @@ namespace CakeOrder
         {
 
         }
+
+        private void ShapeButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShapePage shapePage = new ShapePage();
+            this.NavigationService.Navigate(shapePage);
+        }
     }
 }

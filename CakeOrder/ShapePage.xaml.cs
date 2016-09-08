@@ -21,6 +21,7 @@ namespace CakeOrder
     /// </summary>
     public partial class ShapePage : Page
     {
+        public ShapeEnum SelectedShape = ShapeEnum.Undefined; 
         public ShapePage()
         {
             InitializeComponent();
@@ -35,7 +36,10 @@ namespace CakeOrder
 
         private void ItemChecked(object sender, RoutedEventArgs e)
         {
+            CheckBox c = (CheckBox)sender;
+            CakeShape cs = (CakeShape)c.DataContext;
 
+            SelectedShape = cs.ShapeNum;
         }
         private void DesignButton_Click(object sender, RoutedEventArgs e)
         {

@@ -21,8 +21,9 @@ namespace CakeOrder.DataClasses
         Spiderman,
     };
 
-    enum ShapeEnum
+    public enum ShapeEnum
     {
+        Undefined = -1,
         Round,
         Rectangle,
         Square,

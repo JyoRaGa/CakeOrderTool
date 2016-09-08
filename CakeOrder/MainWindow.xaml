@@ -5,5 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CakeOrder"
         mc:Ignorable="d"
-        Title="Order a cake" Height="900" Width="1200" Source="DesignPage.xaml">
+        Title="Order a cake" Height="900" Width="1200">
 </NavigationWindow>

@@ -25,7 +25,8 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Name="DesignButton" Margin="2">
+
+            <Button Grid.Row="0" Name="DesignButton" Margin="2" Click="DesignButton_Click">
                 Select a cake design
             </Button>
 
@@ -33,15 +34,15 @@
                 Select a cake shape
             </Button>
 
-            <Button Grid.Row="2" Name="SizeButton" Margin="2">
+            <Button Grid.Row="2" Name="SizeButton" Margin="2" Click="SizeButton_Click">
                 Select a cake size
             </Button>
 
-            <Button Grid.Row="3" Name="ColorButton" Margin="2">
+            <Button Grid.Row="3" Name="ColorButton" Margin="2" Click="ColorButton_Click">
                 Select a cake color
             </Button>
 
-            <Button Grid.Row="4" Name="FillingButton" Margin="2">
+            <Button Grid.Row="4" Name="FillingButton" Margin="2" Click="FillingButton_Click">
                 Select a cake filling
             </Button>
 

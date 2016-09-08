@@ -17,26 +17,18 @@ using CakeOrder.DataClasses;
 namespace CakeOrder
 {
     /// <summary>
-    /// Interaction logic for DesignPage.xaml
+    /// Interaction logic for SizePage.xaml
     /// </summary>
-    public partial class DesignPage : Page
+    public partial class SizePage : Page
     {
-        public DesignPage()
+        public SizePage()
         {
             InitializeComponent();
-
-            foreach (CakeDesign c in DesignLists.DefaultDesignList)
-            {
-                c.CakeImage.Source = new BitmapImage(new Uri(c.ImagePath, UriKind.Relative));
-                ImageList.Items.Add(c);
-            }
         }
-
         private void ItemChecked(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void DesignButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(MainWindow.DesignView);

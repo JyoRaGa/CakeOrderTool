@@ -25,9 +25,34 @@ namespace CakeOrder
         {
             InitializeComponent();
         }
+
         private void ItemChecked(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void DesignButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(MainWindow.DesignView);
+        }
+
+        private void ShapeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(MainWindow.ShapeView);
+        }
+
+        private void SizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(MainWindow.SizeView);
+        }
+
+        private void ColorButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(MainWindow.ColorView);
+        }
+
+        private void FillingButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(MainWindow.FillingView);
         }
     }
 }

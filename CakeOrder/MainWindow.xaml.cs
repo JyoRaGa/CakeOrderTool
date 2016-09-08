@@ -16,31 +16,37 @@ using CakeOrder.DataClasses;
 
 namespace CakeOrder
 {
-
-    //public class Cake
-    //{
-    //    public Cake(string name, Image img) { Name = name; Image = img; }
-    //    public string Name { get; set; }
-
-    //    public string Shape { get; set; }
-
-    //    public string Color { get; set; }
-
-    //    public string Size { get; set; }
-
-    //    public string Filling { get; set; }
-
-    //    public Image Image { get; set; }
-    //}
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
+        public static DesignPage DesignView;
+
+        public static ShapePage ShapeView;
+
+        public static SizePage SizeView;
+
+        public static ColorPage ColorView;
+
+        public static FillingPage FillingView;
+
+
         public MainWindow()
         {
             InitializeComponent();
+
+            DesignView = new DesignPage();
+
+            ShapeView = new ShapePage();
+
+            SizeView = new SizePage();
+
+            ColorView = new ColorPage();
+
+            FillingView = new FillingPage();
+
+            this.NavigationService.Navigate(DesignView);
         }
     }
 }

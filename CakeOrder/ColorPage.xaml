@@ -1,4 +1,4 @@
-﻿<Page x:Class="CakeOrder.ShapePage"
+﻿<Page x:Class="CakeOrder.ColorPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CakeOrder.DataClasses"
       mc:Ignorable="d" 
       d:DesignHeight="900" d:DesignWidth="1200"
-      Title="ShapePage">
+      Title="ColorPage">
 
     <Grid Name="MainGrid">
         <Grid.ColumnDefinitions>
@@ -65,4 +65,5 @@
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
+
 </Page>

@@ -24,8 +24,8 @@ namespace CakeOrder.DataClasses
     enum ShapeEnum
     {
         Round,
-        Square,
         Rectangle,
+        Square,
         Custom,
     };
 
@@ -65,7 +65,11 @@ namespace CakeOrder.DataClasses
     class DesignLists
     {
         public static List<CakeDesign> DefaultDesignList { get; }
-        public static List<CakeDesign> SelectedDesignList { get; }
+        //public static List<CakeDesign> SelectedDesignList { get; }
+
+        public static List<CakeShape> DefaultShapeList { get; }
+        //public static List<CakeShape> SelectedShapeList { get; }
+
 
         static DesignLists()
         {
@@ -206,13 +210,47 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
+
+            DefaultShapeList = new List<CakeShape>();
+
+            DefaultShapeList.Add(
+                new CakeShape
+                {
+                    ShapeName = "Round",
+                    ShapeNum = ShapeEnum.Round,
+                }
+            );
+
+            DefaultShapeList.Add(
+                new CakeShape
+                {
+                    ShapeName = "Rectangle",
+                    ShapeNum = ShapeEnum.Rectangle,
+                }
+            );
+
+            DefaultShapeList.Add(
+                new CakeShape
+                {
+                    ShapeName = "Square",
+                    ShapeNum = ShapeEnum.Square,
+                }
+            );
+
+            DefaultShapeList.Add(
+                new CakeShape
+                {
+                    ShapeName = "Custom",
+                    ShapeNum = ShapeEnum.Custom,
+                }
+            );
         }
+
     }
 
     class CakeDesign
     {
         public static Dictionary<DesignEnum, string> DesignImages = new Dictionary<DesignEnum, string>();
-        //public static Dictionary<DesignEnum, string> DesignNames = new Dictionary<DesignEnum, string>();
 
         public string DesignName { get; set; }
         public DesignEnum DesignNum { get; set; }
@@ -240,6 +278,24 @@ namespace CakeOrder.DataClasses
             DesignImages.Add(DesignEnum.MiniCupCake, @"Images\Designs\MiniCupcake.jpg");
             DesignImages.Add(DesignEnum.Spiderman, @"Images\Designs\SpiderMan.jpg");
         }
-
     }
+
+    class CakeShape
+    {
+        public static Dictionary<ShapeEnum, string> ShapeImages = new Dictionary<ShapeEnum, string>();
+
+        public string ShapeName { get; set; }
+        public ShapeEnum ShapeNum { get; set; }
+        public Image ShapeImage { get; set; }
+
+        static CakeShape()
+        {
+            ShapeImages = new Dictionary<ShapeEnum, string>();
+            ShapeImages.Add(ShapeEnum.Round, @"Images\Shapes\Round.jpg");
+            ShapeImages.Add(ShapeEnum.Rectangle, @"Images\Shapes\Rectangle.jpg");
+            ShapeImages.Add(ShapeEnum.Square, @"Images\Shapes\Square.jpg");
+            ShapeImages.Add(ShapeEnum.Custom, @"Images\Shapes\Custom.jpg");
+        }
+    }
+
 }

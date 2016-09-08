@@ -24,6 +24,13 @@ namespace CakeOrder
         public ShapePage()
         {
             InitializeComponent();
+            foreach (CakeShape c in DesignLists.DefaultShapeList)
+            {
+                c.ShapeImage = new Image();
+                c.ShapeImage.Source = new BitmapImage(new Uri(CakeShape.ShapeImages[c.ShapeNum], UriKind.Relative));
+                ImageList.Items.Add(c);
+            }
+
         }
 
         private void ItemChecked(object sender, RoutedEventArgs e)

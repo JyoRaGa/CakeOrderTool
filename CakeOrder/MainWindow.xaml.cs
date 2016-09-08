@@ -48,5 +48,10 @@ namespace CakeOrder
 
             this.NavigationService.Navigate(DesignView);
         }
+
+        public static void SelectShape(ShapeEnum shape)
+        {
+            SizeView.SelectShape(shape);
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace CakeOrder.DataClasses
 {
-    enum DesignEnum
+    public enum DesignEnum
     {
         Balloon,
         CapeAndGown,
@@ -30,7 +30,7 @@ namespace CakeOrder.DataClasses
         Custom,
     };
 
-    enum SizeEnum
+    public enum SizeEnum
     {
         OneThirdSheet,
         HalfSheet,
@@ -44,7 +44,7 @@ namespace CakeOrder.DataClasses
         CustomSize,
     };
 
-    enum ColorEnum
+    public enum ColorEnum
     {
         Blue,
         Pink,
@@ -56,7 +56,7 @@ namespace CakeOrder.DataClasses
         CustomColor
     }
 
-    enum FlavorEnum
+    public enum FlavorEnum
     {
         Vanilla,
         Strawberry,
@@ -274,11 +274,70 @@ namespace CakeOrder.DataClasses
             DefaultSizesList.Add(
                 new CakeSize
                 {
+                    SizeName = "Nine Inch",
+                    SizeNum = SizeEnum.NineInchRound,
+                    ShapeNum = ShapeEnum.Round,
+                }
+            );
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
                     SizeName = "Half Sheet",
                     SizeNum = SizeEnum.HalfSheet,
                     ShapeNum = ShapeEnum.Rectangle,
                 }
 
+            );
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Full Sheet",
+                    SizeNum = SizeEnum.FullSheet,
+                    ShapeNum = ShapeEnum.Rectangle,
+                }
+
+            );
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Double Sheet",
+                    SizeNum = SizeEnum.DoubleSheet,
+                    ShapeNum = ShapeEnum.Rectangle,
+                }
+
+            );
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "One and One Half Sheet",
+                    SizeNum = SizeEnum.OneOneHalfSheet,
+                    ShapeNum = ShapeEnum.Rectangle,
+                }
+
+            );
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "One and One Third Sheet",
+                    SizeNum = SizeEnum.OneOneThirdSheet,
+                    ShapeNum = ShapeEnum.Rectangle,
+                }
+
+            );
+
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "One Third Sheet",
+                    SizeNum = SizeEnum.OneThirdSheet,
+                    ShapeNum = ShapeEnum.Rectangle,
+                }
             );
 
             DefaultSizesList.Add(
@@ -400,7 +459,7 @@ namespace CakeOrder.DataClasses
 
     }
 
-    class CakeDesign
+    public class CakeDesign
     {
         public static Dictionary<DesignEnum, string> DesignImages = new Dictionary<DesignEnum, string>();
 
@@ -432,7 +491,7 @@ namespace CakeOrder.DataClasses
         }
     }
 
-    class CakeShape
+    public class CakeShape
     {
         public static Dictionary<ShapeEnum, string> ShapeImages = new Dictionary<ShapeEnum, string>();
 
@@ -450,7 +509,7 @@ namespace CakeOrder.DataClasses
         }
     }
 
-    class CakeSize
+    public class CakeSize
     {
         public static Dictionary<SizeEnum, string> SizeImages = new Dictionary<SizeEnum, string>();
 
@@ -463,14 +522,20 @@ namespace CakeOrder.DataClasses
         {
             SizeImages = new Dictionary<SizeEnum, string>();
             SizeImages.Add(SizeEnum.SixInchRound, @"Images\Sizes\SixInch.jpg");
+            SizeImages.Add(SizeEnum.NineInchRound, @"Images\Sizes\NineInch.jpg");
             SizeImages.Add(SizeEnum.HalfSheet, @"Images\Sizes\HalfSheet.jpg");
+            SizeImages.Add(SizeEnum.FullSheet, @"Images\Sizes\FullSheet.jpg");
+            SizeImages.Add(SizeEnum.DoubleSheet, @"Images\Sizes\DoubleSheet.jpg");
+            SizeImages.Add(SizeEnum.OneOneHalfSheet, @"Images\Sizes\OneOneHalf.jpg");
+            SizeImages.Add(SizeEnum.OneOneThirdSheet, @"Images\Sizes\OneOneThird.jpg");
+            SizeImages.Add(SizeEnum.OneThirdSheet, @"Images\Sizes\OneThird.jpg");
             SizeImages.Add(SizeEnum.TwoThirdSheet, @"Images\Sizes\TwoThird.jpg");
             SizeImages.Add(SizeEnum.CustomSize, @"Images\Sizes\Custom.jpg");
         }
     }
 
 
-    class CakeColor
+    public class CakeColor
     {
         public static Dictionary<ColorEnum, string> ColorImages = new Dictionary<ColorEnum, string>();
 
@@ -492,7 +557,7 @@ namespace CakeOrder.DataClasses
         }
     }
 
-    class CakeFlavor
+    public class CakeFlavor
     {
         public static Dictionary<FlavorEnum, string> FlavorImages = new Dictionary<FlavorEnum, string>();
 

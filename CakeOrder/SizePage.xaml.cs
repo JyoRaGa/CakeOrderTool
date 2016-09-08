@@ -21,17 +21,79 @@ namespace CakeOrder
     /// </summary>
     public partial class SizePage : Page
     {
+
+        public List<CakeSize> SelectedSizesList;
+
         public SizePage()
         {
             InitializeComponent();
 
-            foreach (CakeSize c in DesignLists.DefaultSizesList)
+            SelectedSizesList = new List<CakeSize>();
+
+            SelectedSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Six Inch",
+                    SizeNum = SizeEnum.SixInchRound,
+                    ShapeNum = ShapeEnum.Round,
+                }
+            );
+
+            SelectedSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Half Sheet",
+                    SizeNum = SizeEnum.HalfSheet,
+                    ShapeNum = ShapeEnum.Rectangle,
+                }
+
+            );
+
+            SelectedSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Two Third Sheet",
+                    SizeNum = SizeEnum.TwoThirdSheet,
+                    ShapeNum = ShapeEnum.Square,
+                }
+            );
+
+            SelectedSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Custom",
+                    SizeNum = SizeEnum.CustomSize,
+                    ShapeNum = ShapeEnum.Custom,
+                }
+            );
+
+            RenderSelectSizes();
+        }
+
+        public void RenderSelectSizes()
+        {
+            ImageList.Items.Clear();
+
+            foreach (CakeSize c in SelectedSizesList)
             {
                 c.SizeImage = new Image();
                 c.SizeImage.Source = new BitmapImage(new Uri(CakeSize.SizeImages[c.SizeNum], UriKind.Relative));
                 ImageList.Items.Add(c);
             }
         }
+
+        public void SelectShape(ShapeEnum shape)
+        {
+            SelectedSizesList.Clear();
+
+            foreach (CakeSize c in DesignLists.DefaultSizesList.Where(x => x.ShapeNum == shape))
+            {
+                SelectedSizesList.Add(c);
+            }
+
+            RenderSelectSizes();
+        }
+
         private void ItemChecked(object sender, RoutedEventArgs e)
         {
 

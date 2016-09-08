@@ -40,6 +40,7 @@ namespace CakeOrder
             CakeShape cs = (CakeShape)c.DataContext;
 
             SelectedShape = cs.ShapeNum;
+            MainWindow.SelectShape(SelectedShape);
         }
         private void DesignButton_Click(object sender, RoutedEventArgs e)
         {
@@ -48,6 +49,7 @@ namespace CakeOrder
 
         private void ShapeButton_Click(object sender, RoutedEventArgs e)
         {
+
             this.NavigationService.Navigate(MainWindow.ShapeView);
         }
 

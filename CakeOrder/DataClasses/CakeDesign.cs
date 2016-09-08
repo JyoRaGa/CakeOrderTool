@@ -64,18 +64,28 @@ namespace CakeOrder.DataClasses
 
     class DesignLists
     {
-        public static List<CakeDesign> DefaultDesignList { get; }
-        //public static List<CakeDesign> SelectedDesignList { get; }
+        public static List<CakeDesign> DefaultDesignsList { get; }
+        //public static List<CakeDesign> SelectedDesignsList { get; }
 
-        public static List<CakeShape> DefaultShapeList { get; }
-        //public static List<CakeShape> SelectedShapeList { get; }
+        public static List<CakeShape> DefaultShapesList { get; }
+        //public static List<CakeShape> SelectedShapesList { get; }
 
+        public static List<CakeSize> DefaultSizesList { get; }
+        //public static List<CakeSize> SelectedSizesList { get; }
+
+        public static List<CakeColor> DefaultColorsList { get; }
+        //public static List<CakeColor> SelectedColorsList { get; }
+
+        public static List<CakeFlavor> DefaultFlavorsList { get; }
+        //public static List<CakeFlavor> SelectedFlavorsList { get; }
 
         static DesignLists()
         {
-            DefaultDesignList = new List<CakeDesign>();
+            DefaultDesignsList = new List<CakeDesign>();
 
-            DefaultDesignList.Add(
+#region Design List creation
+
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Balloon",
@@ -90,7 +100,7 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
-            DefaultDesignList.Add(
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Cape And Gown Cake",
@@ -105,7 +115,7 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
-            DefaultDesignList.Add(
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Celebration Cake",
@@ -120,7 +130,7 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
-            DefaultDesignList.Add(
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Cream Cone Cake",
@@ -135,7 +145,7 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
-            DefaultDesignList.Add(
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Floral Cake",
@@ -150,7 +160,7 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
-            DefaultDesignList.Add(
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Flower Garden",
@@ -165,7 +175,7 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
-            DefaultDesignList.Add(
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Mini CupCake Cake",
@@ -180,7 +190,7 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
-            DefaultDesignList.Add(
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Spiderman Cake",
@@ -195,7 +205,7 @@ namespace CakeOrder.DataClasses
                     Flavor = FlavorEnum.Vanilla,
                 }
             );
-            DefaultDesignList.Add(
+            DefaultDesignsList.Add(
                 new CakeDesign
                 {
                     DesignName = "Football Cake",
@@ -211,9 +221,11 @@ namespace CakeOrder.DataClasses
                 }
             );
 
-            DefaultShapeList = new List<CakeShape>();
+#endregion
+#region Shape List creation
+            DefaultShapesList = new List<CakeShape>();
 
-            DefaultShapeList.Add(
+            DefaultShapesList.Add(
                 new CakeShape
                 {
                     ShapeName = "Round",
@@ -221,7 +233,7 @@ namespace CakeOrder.DataClasses
                 }
             );
 
-            DefaultShapeList.Add(
+            DefaultShapesList.Add(
                 new CakeShape
                 {
                     ShapeName = "Rectangle",
@@ -229,7 +241,7 @@ namespace CakeOrder.DataClasses
                 }
             );
 
-            DefaultShapeList.Add(
+            DefaultShapesList.Add(
                 new CakeShape
                 {
                     ShapeName = "Square",
@@ -237,13 +249,152 @@ namespace CakeOrder.DataClasses
                 }
             );
 
-            DefaultShapeList.Add(
+            DefaultShapesList.Add(
                 new CakeShape
                 {
                     ShapeName = "Custom",
                     ShapeNum = ShapeEnum.Custom,
                 }
             );
+
+#endregion
+#region Size List creation
+            DefaultSizesList = new List<CakeSize>();
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Six Inch",
+                    SizeNum = SizeEnum.SixInchRound,
+                    ShapeNum = ShapeEnum.Round,
+                }
+            );
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Half Sheet",
+                    SizeNum = SizeEnum.HalfSheet,
+                    ShapeNum = ShapeEnum.Rectangle,
+                }
+
+            );
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Two Third Sheet",
+                    SizeNum = SizeEnum.TwoThirdSheet,
+                    ShapeNum = ShapeEnum.Square,
+                }
+            );
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Custom",
+                    SizeNum = SizeEnum.CustomSize,
+                    ShapeNum = ShapeEnum.Custom,
+                }
+            );
+
+            #endregion
+#region Color List creation
+            DefaultColorsList = new List<CakeColor>();
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
+                    ColorName = "Blue",
+                    ColorNum = ColorEnum.Blue,
+                }
+            );
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
+                    ColorName = "Chocolate",
+                    ColorNum = ColorEnum.Chocolate,
+                }
+            );
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
+                    ColorName = "Green",
+                    ColorNum = ColorEnum.Green,
+                }
+            );
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
+                    ColorName = "OffWhite",
+                    ColorNum = ColorEnum.OffWhite,
+                }
+            );
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
+                    ColorName = "Pink",
+                    ColorNum = ColorEnum.Pink,
+                }
+            );
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
+                    ColorName = "White",
+                    ColorNum = ColorEnum.White,
+                }
+            );
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
+                    ColorName = "Yellow",
+                    ColorNum = ColorEnum.Yellow,
+                }
+            );
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
+                    ColorName = "Custom Color",
+                    ColorNum = ColorEnum.CustomColor,
+                }
+            );
+
+            #endregion
+
+            #region Flavor List creation
+            DefaultFlavorsList = new List<CakeFlavor>();
+
+            DefaultFlavorsList.Add(
+                new CakeFlavor
+                {
+                    FlavorName = "Chocolate",
+                    FlavorNum = FlavorEnum.Chocolate,
+                }
+            );
+
+            DefaultFlavorsList.Add(
+                new CakeFlavor
+                {
+                    FlavorName = "Vanilla",
+                    FlavorNum = FlavorEnum.Vanilla,
+                }
+            );
+
+            DefaultFlavorsList.Add(
+                new CakeFlavor
+                {
+                    FlavorName = "Strawberry",
+                    FlavorNum = FlavorEnum.Strawberry,
+                }
+            );
+#endregion
         }
 
     }
@@ -298,4 +449,62 @@ namespace CakeOrder.DataClasses
         }
     }
 
+    class CakeSize
+    {
+        public static Dictionary<SizeEnum, string> SizeImages = new Dictionary<SizeEnum, string>();
+
+        public string SizeName { get; set; }
+        public SizeEnum SizeNum { get; set; }
+        public ShapeEnum ShapeNum { get; set; }
+        public Image SizeImage { get; set; }
+
+        static CakeSize()
+        {
+            SizeImages = new Dictionary<SizeEnum, string>();
+            SizeImages.Add(SizeEnum.SixInchRound, @"Images\Sizes\SixInch.jpg");
+            SizeImages.Add(SizeEnum.HalfSheet, @"Images\Sizes\HalfSheet.jpg");
+            SizeImages.Add(SizeEnum.TwoThirdSheet, @"Images\Sizes\TwoThird.jpg");
+            SizeImages.Add(SizeEnum.CustomSize, @"Images\Sizes\Custom.jpg");
+        }
+    }
+
+
+    class CakeColor
+    {
+        public static Dictionary<ColorEnum, string> ColorImages = new Dictionary<ColorEnum, string>();
+
+        public string ColorName { get; set; }
+        public ColorEnum ColorNum { get; set; }
+        public Image ColorImage { get; set; }
+
+        static CakeColor()
+        {
+            ColorImages = new Dictionary<ColorEnum, string>();
+            ColorImages.Add(ColorEnum.Blue, @"Images\Colors\RoundBlue.jpg");
+            ColorImages.Add(ColorEnum.Chocolate, @"Images\Colors\RoundChocolate.jpg");
+            ColorImages.Add(ColorEnum.Green, @"Images\Colors\RoundGreen.jpg");
+            ColorImages.Add(ColorEnum.OffWhite, @"Images\Colors\RoundOffWhite.jpg");
+            ColorImages.Add(ColorEnum.Pink, @"Images\Colors\RoundPink.jpg");
+            ColorImages.Add(ColorEnum.White, @"Images\Colors\RoundWhite.jpg");
+            ColorImages.Add(ColorEnum.Yellow, @"Images\Colors\RoundYellow.jpg");
+            ColorImages.Add(ColorEnum.CustomColor, @"Images\Colors\Custom.jpg");
+        }
+    }
+
+    class CakeFlavor
+    {
+        public static Dictionary<FlavorEnum, string> FlavorImages = new Dictionary<FlavorEnum, string>();
+
+        public string FlavorName { get; set; }
+        public FlavorEnum FlavorNum { get; set; }
+        public Image FlavorImage { get; set; }
+
+        static CakeFlavor()
+        {
+            FlavorImages = new Dictionary<FlavorEnum, string>();
+            FlavorImages.Add(FlavorEnum.Chocolate, @"Images\Flavors\Chocolate.jpg");
+            FlavorImages.Add(FlavorEnum.Strawberry, @"Images\Flavors\Strawberry.jpg");
+            FlavorImages.Add(FlavorEnum.Vanilla, @"Images\Flavors\Vanilla.jpg");
+        }
+    }
 }

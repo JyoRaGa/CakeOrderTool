@@ -29,7 +29,7 @@ namespace CakeOrder
 
         public static ColorPage ColorView;
 
-        public static FillingPage FillingView;
+        public static FlavorPage FlavorView;
 
 
         public MainWindow()
@@ -44,7 +44,7 @@ namespace CakeOrder
 
             ColorView = new ColorPage();
 
-            FillingView = new FillingPage();
+            FlavorView = new FlavorPage();
 
             this.NavigationService.Navigate(DesignView);
         }

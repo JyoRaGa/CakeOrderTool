@@ -42,8 +42,8 @@
                 Select a cake color
             </Button>
 
-            <Button Grid.Row="4" Name="FillingButton" Margin="2" Click="FillingButton_Click">
-                Select a cake filling
+            <Button Grid.Row="4" Name="FlavorButton" Margin="2" Click="FlavorButton_Click">
+                Select a cake Flavor
             </Button>
 
             <Image Grid.Row="5" Name="SelectedCakeImage" Margin="2" Source="Images\Designs\CakeBackground.jpg"></Image>
@@ -56,10 +56,10 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
-                <DataTemplate DataType="{x:Type local:CakeDesign}">
+                <DataTemplate DataType="{x:Type local:CakeColor}">
                     <StackPanel>
-                        <CheckBox Name ="ItemCheck" Grid.Column="1"  Content="{Binding DesignName}" Width="150" Checked="ItemChecked"/>
-                        <ContentControl Margin="3" Content="{Binding CakeImage}" Width="150"/>
+                        <CheckBox Name ="ItemCheck" Grid.Column="1"  Content="{Binding ColorName}" Width="150" Checked="ItemChecked"/>
+                        <ContentControl Margin="3" Content="{Binding ColorImage}" Width="150"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

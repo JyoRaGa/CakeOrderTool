@@ -24,7 +24,7 @@ namespace CakeOrder
         public ShapePage()
         {
             InitializeComponent();
-            foreach (CakeShape c in DesignLists.DefaultShapeList)
+            foreach (CakeShape c in DesignLists.DefaultShapesList)
             {
                 c.ShapeImage = new Image();
                 c.ShapeImage.Source = new BitmapImage(new Uri(CakeShape.ShapeImages[c.ShapeNum], UriKind.Relative));
@@ -57,9 +57,9 @@ namespace CakeOrder
             this.NavigationService.Navigate(MainWindow.ColorView);
         }
 
-        private void FillingButton_Click(object sender, RoutedEventArgs e)
+        private void FlavorButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(MainWindow.FillingView);
+            this.NavigationService.Navigate(MainWindow.FlavorView);
         }
     }
 }

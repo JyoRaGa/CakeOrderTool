@@ -1,4 +1,4 @@
-﻿<Page x:Class="CakeOrder.FillingPage"
+﻿<Page x:Class="CakeOrder.FlavorPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CakeOrder.DataClasses"
       mc:Ignorable="d" 
       d:DesignHeight="900" d:DesignWidth="1200"
-      Title="FillingPage">
+      Title="FlavorPage">
 
     <Grid Name="MainGrid">
         <Grid.ColumnDefinitions>
@@ -42,8 +42,8 @@
                 Select a cake color
             </Button>
 
-            <Button Grid.Row="4" Name="FillingButton" Margin="2" Click="FillingButton_Click">
-                Select a cake filling
+            <Button Grid.Row="4" Name="FlavorButton" Margin="2" Click="FlavorButton_Click">
+                Select a cake Flavor
             </Button>
 
             <Image Grid.Row="5" Name="SelectedCakeImage" Margin="2" Source="Images\Designs\CakeBackground.jpg"></Image>
@@ -56,10 +56,10 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
-                <DataTemplate DataType="{x:Type local:CakeDesign}">
+                <DataTemplate DataType="{x:Type local:CakeFlavor}">
                     <StackPanel>
-                        <CheckBox Name ="ItemCheck" Grid.Column="1"  Content="{Binding DesignName}" Width="150" Checked="ItemChecked"/>
-                        <ContentControl Margin="3" Content="{Binding CakeImage}" Width="150"/>
+                        <CheckBox Name ="ItemCheck" Grid.Column="1"  Content="{Binding FlavorName}" Width="150" Checked="ItemChecked"/>
+                        <ContentControl Margin="3" Content="{Binding FlavorImage}" Width="150"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

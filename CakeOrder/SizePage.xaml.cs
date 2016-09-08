@@ -24,6 +24,13 @@ namespace CakeOrder
         public SizePage()
         {
             InitializeComponent();
+
+            foreach (CakeSize c in DesignLists.DefaultSizesList)
+            {
+                c.SizeImage = new Image();
+                c.SizeImage.Source = new BitmapImage(new Uri(CakeSize.SizeImages[c.SizeNum], UriKind.Relative));
+                ImageList.Items.Add(c);
+            }
         }
         private void ItemChecked(object sender, RoutedEventArgs e)
         {
@@ -49,9 +56,9 @@ namespace CakeOrder
             this.NavigationService.Navigate(MainWindow.ColorView);
         }
 
-        private void FillingButton_Click(object sender, RoutedEventArgs e)
+        private void FlavorButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(MainWindow.FillingView);
+            this.NavigationService.Navigate(MainWindow.FlavorView);
         }
     }
 }

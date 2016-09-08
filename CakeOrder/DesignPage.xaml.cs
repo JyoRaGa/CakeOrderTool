@@ -27,7 +27,8 @@ namespace CakeOrder
 
             foreach (CakeDesign c in DesignLists.DefaultDesignList)
             {
-                c.CakeImage.Source = new BitmapImage(new Uri(c.ImagePath, UriKind.Relative));
+                c.CakeImage = new Image();
+                c.CakeImage.Source = new BitmapImage(new Uri(CakeDesign.DesignImages[c.DesignNum], UriKind.Relative));
                 ImageList.Items.Add(c);
             }
         }

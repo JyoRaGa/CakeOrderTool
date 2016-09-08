@@ -84,9 +84,6 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Rectangle,
                     Size = SizeEnum.HalfSheet,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.Balloon],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.Balloon],
-                    CakeImage = new Image(),
                 }
             );
             DefaultDesignList.Add(
@@ -102,9 +99,6 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Rectangle,
                     Size = SizeEnum.HalfSheet,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.CapeAndGown],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.CapeAndGown],
-                    CakeImage = new Image(),
                 }
             );
             DefaultDesignList.Add(
@@ -120,9 +114,7 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Round,
                     Size = SizeEnum.SixInchRound,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.Celebration],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.Celebration],
-                    CakeImage = new Image(),        }
+                }
             );
             DefaultDesignList.Add(
                 new CakeDesign
@@ -137,9 +129,6 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Round,
                     Size = SizeEnum.SixInchRound,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.CreamCone],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.CreamCone],
-                    CakeImage = new Image(),
                 }
             );
             DefaultDesignList.Add(
@@ -155,9 +144,6 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Rectangle,
                     Size = SizeEnum.HalfSheet,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.Floral],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.Floral],
-                    CakeImage = new Image(),
                 }
             );
             DefaultDesignList.Add(
@@ -173,9 +159,6 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Rectangle,
                     Size = SizeEnum.HalfSheet,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.FlowerGarden],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.FlowerGarden],
-                    CakeImage = new Image(),
                 }
             );
             DefaultDesignList.Add(
@@ -191,9 +174,6 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Round,
                     Size = SizeEnum.SixInchRound,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.MiniCupCake],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.MiniCupCake],
-                    CakeImage = new Image(),
                 }
             );
             DefaultDesignList.Add(
@@ -209,9 +189,6 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Custom,
                     Size = SizeEnum.CustomSize,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.Spiderman],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.Spiderman],
-                    CakeImage = new Image(),
                 }
             );
             DefaultDesignList.Add(
@@ -227,9 +204,6 @@ namespace CakeOrder.DataClasses
                     Shape = ShapeEnum.Custom,
                     Size = SizeEnum.CustomSize,
                     Flavor = FlavorEnum.Vanilla,
-                    DefaultImagePath = CakeDesign.DesignImages[DesignEnum.Football],
-                    ImagePath = CakeDesign.DesignImages[DesignEnum.Football],
-                    CakeImage = new Image(),
                 }
             );
         }
@@ -250,8 +224,6 @@ namespace CakeOrder.DataClasses
         public SizeEnum Size { get; set; }
         public FlavorEnum DefaultFlavor { get; set; }
         public FlavorEnum Flavor { get; set; }
-        public string DefaultImagePath { get; set; }
-        public string ImagePath { get; set; }
         public Image CakeImage { get; set; }
 
         static CakeDesign()

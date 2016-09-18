@@ -9,6 +9,7 @@ namespace CakeOrder.DataClasses
 {
     public enum DesignEnum
     {
+        Undefined = -1,
         Balloon,
         CapeAndGown,
         Celebration,
@@ -32,6 +33,7 @@ namespace CakeOrder.DataClasses
 
     public enum SizeEnum
     {
+        Undefined = -1,
         OneThirdSheet,
         HalfSheet,
         TwoThirdSheet,
@@ -46,6 +48,7 @@ namespace CakeOrder.DataClasses
 
     public enum ColorEnum
     {
+        Undefined = -1,
         Blue,
         Pink,
         Yellow,
@@ -58,6 +61,7 @@ namespace CakeOrder.DataClasses
 
     public enum FlavorEnum
     {
+        Undefined = -1,
         Vanilla,
         Strawberry,
         Chocolate,
@@ -461,6 +465,12 @@ namespace CakeOrder.DataClasses
 
     public class CakeDesign
     {
+        public static ShapeEnum SelectedShape = ShapeEnum.Undefined;
+        public static SizeEnum SelectedSize = SizeEnum.Undefined;
+        public static ColorEnum SelectedColor = ColorEnum.Undefined;
+        public static FlavorEnum SelectedFlavor = FlavorEnum.Undefined;
+        public static DesignEnum SelectedDesign = DesignEnum.Undefined;
+
         public static Dictionary<DesignEnum, string> DesignImages = new Dictionary<DesignEnum, string>();
 
         public string DesignName { get; set; }

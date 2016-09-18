@@ -86,9 +86,19 @@ namespace CakeOrder
         {
             SelectedSizesList.Clear();
 
-            foreach (CakeSize c in DesignLists.DefaultSizesList.Where(x => x.ShapeNum == shape))
+            if (shape == ShapeEnum.Undefined)
             {
-                SelectedSizesList.Add(c);
+                foreach (CakeSize c in DesignLists.DefaultSizesList)
+                {
+                    SelectedSizesList.Add(c);
+                }
+            }
+            else
+            {
+                foreach (CakeSize c in DesignLists.DefaultSizesList.Where(x => x.ShapeNum == shape))
+                {
+                    SelectedSizesList.Add(c);
+                }
             }
 
             RenderSelectSizes();

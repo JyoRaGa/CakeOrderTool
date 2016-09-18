@@ -58,7 +58,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate DataType="{x:Type local:CakeShape}">
                     <StackPanel>
-                        <CheckBox Name ="ItemCheck" Grid.Column="1"  Content="{Binding ShapeName}" Width="150" Checked="ItemChecked"/>
+                        <CheckBox Name ="ItemCheck" Grid.Column="1"  Content="{Binding ShapeName}" Width="150" Checked="ItemChecked" Unchecked="ItemChecked"/>
                         <ContentControl Margin="3" Content="{Binding ShapeImage}" Width="150"/>
                     </StackPanel>
                 </DataTemplate>

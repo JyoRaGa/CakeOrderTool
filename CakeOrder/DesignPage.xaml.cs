@@ -31,11 +31,41 @@ namespace CakeOrder
                 c.CakeImage.Source = new BitmapImage(new Uri(CakeDesign.DesignImages[c.DesignNum], UriKind.Relative));
                 ImageList.Items.Add(c);
             }
+
+            Binding shapeBinding = new Binding();
+            shapeBinding.Path = new PropertyPath("ShapeName");
+            shapeBinding.Mode = BindingMode.OneTime;
+            SelectedShape.DataContext = CakeDesign.SelectedShape;
+            SelectedShape.SetBinding(TextBlock.TextProperty, shapeBinding);
+
+            Binding sizeBinding = new Binding();
+            sizeBinding.Path = new PropertyPath("SizeName");
+            sizeBinding.Mode = BindingMode.OneTime;
+            sizeBinding.Source = CakeDesign.SelectedSize;
+            SelectedSize.DataContext = CakeDesign.SelectedSize;
+            SelectedSize.SetBinding(TextBlock.TextProperty, sizeBinding);
+
+            Binding colorBinding = new Binding();
+            colorBinding.Path = new PropertyPath("ColorName");
+            colorBinding.Mode = BindingMode.OneTime;
+            colorBinding.Source = CakeDesign.SelectedColor;
+            SelectedColor.DataContext = CakeDesign.SelectedColor;
+            SelectedColor.SetBinding(TextBlock.TextProperty, colorBinding);
+
+            Binding flavorBinding = new Binding();
+            flavorBinding.Path = new PropertyPath("FlavorName");
+            flavorBinding.Mode = BindingMode.OneTime;
+            flavorBinding.Source = CakeDesign.SelectedFlavor;
+            SelectedFlavor.DataContext = CakeDesign.SelectedFlavor;
+            SelectedFlavor.SetBinding(TextBlock.TextProperty, flavorBinding);
         }
 
         private void ItemChecked(object sender, RoutedEventArgs e)
         {
+            RadioButton c = (RadioButton)sender;
+            CakeDesign cs = (CakeDesign)c.DataContext;
 
+            MainWindow.SelectDesign(cs);
         }
 
         private void DesignButton_Click(object sender, RoutedEventArgs e)
@@ -61,6 +91,11 @@ namespace CakeOrder
         private void FlavorButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(MainWindow.FlavorView);
+        }
+
+        private void SelectionButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

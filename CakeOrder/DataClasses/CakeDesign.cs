@@ -88,7 +88,23 @@ namespace CakeOrder.DataClasses
         {
             DefaultDesignsList = new List<CakeDesign>();
 
-#region Design List creation
+            #region Design List creation
+
+            DefaultDesignsList.Add(
+                new CakeDesign
+                {
+                    DesignName = "Not Selected",
+                    DesignNum = DesignEnum.Undefined,
+                    DefaultColor = ColorEnum.Blue,
+                    DefaultShape = ShapeEnum.Rectangle,
+                    DefaultSize = SizeEnum.HalfSheet,
+                    DefaultFlavor = FlavorEnum.Vanilla,
+                    Color = ColorEnum.Undefined,
+                    Shape = ShapeEnum.Undefined,
+                    Size = SizeEnum.Undefined,
+                    Flavor = FlavorEnum.Undefined,
+                }
+            );
 
             DefaultDesignsList.Add(
                 new CakeDesign
@@ -233,6 +249,14 @@ namespace CakeOrder.DataClasses
             DefaultShapesList.Add(
                 new CakeShape
                 {
+                    ShapeName = "Not selected",
+                    ShapeNum = ShapeEnum.Undefined,
+                }
+            );
+
+            DefaultShapesList.Add(
+                new CakeShape
+                {
                     ShapeName = "Round",
                     ShapeNum = ShapeEnum.Round,
                 }
@@ -265,6 +289,16 @@ namespace CakeOrder.DataClasses
 #endregion
 #region Size List creation
             DefaultSizesList = new List<CakeSize>();
+
+            DefaultSizesList.Add(
+                new CakeSize
+                {
+                    SizeName = "Not selected",
+                    SizeNum = SizeEnum.Undefined,
+                    ShapeNum = ShapeEnum.Undefined,
+                }
+            );
+
 
             DefaultSizesList.Add(
                 new CakeSize
@@ -369,6 +403,14 @@ namespace CakeOrder.DataClasses
             DefaultColorsList.Add(
                 new CakeColor
                 {
+                    ColorName = "Not selected",
+                    ColorNum = ColorEnum.Undefined,
+                }
+            );
+
+            DefaultColorsList.Add(
+                new CakeColor
+                {
                     ColorName = "Blue",
                     ColorNum = ColorEnum.Blue,
                 }
@@ -431,9 +473,16 @@ namespace CakeOrder.DataClasses
             );
 
             #endregion
-
-            #region Flavor List creation
+#region Flavor List creation
             DefaultFlavorsList = new List<CakeFlavor>();
+
+            DefaultFlavorsList.Add(
+                new CakeFlavor
+                {
+                    FlavorName = "Not selected",
+                    FlavorNum = FlavorEnum.Undefined,
+                }
+            );
 
             DefaultFlavorsList.Add(
                 new CakeFlavor
@@ -465,11 +514,44 @@ namespace CakeOrder.DataClasses
 
     public class CakeDesign
     {
-        public static ShapeEnum SelectedShape = ShapeEnum.Undefined;
-        public static SizeEnum SelectedSize = SizeEnum.Undefined;
-        public static ColorEnum SelectedColor = ColorEnum.Undefined;
-        public static FlavorEnum SelectedFlavor = FlavorEnum.Undefined;
-        public static DesignEnum SelectedDesign = DesignEnum.Undefined;
+        public static CakeShape SelectedShape = new CakeShape
+                {
+                    ShapeName = "Not selected",
+                    ShapeNum = ShapeEnum.Undefined,
+                };
+
+        public static CakeSize SelectedSize = new CakeSize
+        {
+            SizeName = "Not selected",
+            SizeNum = SizeEnum.Undefined,
+            ShapeNum = ShapeEnum.Undefined,
+        };
+
+        public static CakeColor SelectedColor = new CakeColor
+        {
+            ColorName = "Not selected",
+            ColorNum = ColorEnum.Undefined,
+        };
+
+        public static CakeFlavor SelectedFlavor = new CakeFlavor
+        {
+            FlavorName = "Not selected",
+            FlavorNum = FlavorEnum.Undefined,
+        };
+
+        public static CakeDesign SelectedDesign = new CakeDesign
+        {
+            DesignName = "Not Selected",
+            DesignNum = DesignEnum.Undefined,
+            DefaultColor = ColorEnum.Blue,
+            DefaultShape = ShapeEnum.Rectangle,
+            DefaultSize = SizeEnum.HalfSheet,
+            DefaultFlavor = FlavorEnum.Vanilla,
+            Color = ColorEnum.Undefined,
+            Shape = ShapeEnum.Undefined,
+            Size = SizeEnum.Undefined,
+            Flavor = FlavorEnum.Undefined,
+        };
 
         public static Dictionary<DesignEnum, string> DesignImages = new Dictionary<DesignEnum, string>();
 
@@ -488,6 +570,7 @@ namespace CakeOrder.DataClasses
         static CakeDesign()
         {
             DesignImages = new Dictionary<DesignEnum, string>();
+            DesignImages.Add(DesignEnum.Undefined, @"Images\Designs\CakeBackground.jpg");
             DesignImages.Add(DesignEnum.Balloon, @"Images\Designs\BalloonRectFullBlue.jpg");
             DesignImages.Add(DesignEnum.CapeAndGown, @"Images\Designs\CapAndGown.jpg");
             DesignImages.Add(DesignEnum.Celebration, @"Images\Designs\CelebrationOffWhite.jpg");
@@ -507,11 +590,13 @@ namespace CakeOrder.DataClasses
 
         public string ShapeName { get; set; }
         public ShapeEnum ShapeNum { get; set; }
+        public SizeEnum SizeNum { get; set; }
         public Image ShapeImage { get; set; }
 
         static CakeShape()
         {
             ShapeImages = new Dictionary<ShapeEnum, string>();
+            ShapeImages.Add(ShapeEnum.Undefined, @"Images\Designs\CakeBackground.jpg");
             ShapeImages.Add(ShapeEnum.Round, @"Images\Shapes\Round.jpg");
             ShapeImages.Add(ShapeEnum.Rectangle, @"Images\Shapes\Rectangle.jpg");
             ShapeImages.Add(ShapeEnum.Square, @"Images\Shapes\Square.jpg");
@@ -531,6 +616,7 @@ namespace CakeOrder.DataClasses
         static CakeSize()
         {
             SizeImages = new Dictionary<SizeEnum, string>();
+            SizeImages.Add(SizeEnum.Undefined, @"Images\Designs\CakeBackground.jpg");
             SizeImages.Add(SizeEnum.SixInchRound, @"Images\Sizes\SixInch.jpg");
             SizeImages.Add(SizeEnum.NineInchRound, @"Images\Sizes\NineInch.jpg");
             SizeImages.Add(SizeEnum.HalfSheet, @"Images\Sizes\HalfSheet.jpg");
@@ -556,6 +642,7 @@ namespace CakeOrder.DataClasses
         static CakeColor()
         {
             ColorImages = new Dictionary<ColorEnum, string>();
+            ColorImages.Add(ColorEnum.Undefined, @"Images\Designs\CakeBackground.jpg");
             ColorImages.Add(ColorEnum.Blue, @"Images\Colors\RoundBlue.jpg");
             ColorImages.Add(ColorEnum.Chocolate, @"Images\Colors\RoundChocolate.jpg");
             ColorImages.Add(ColorEnum.Green, @"Images\Colors\RoundGreen.jpg");
@@ -578,6 +665,7 @@ namespace CakeOrder.DataClasses
         static CakeFlavor()
         {
             FlavorImages = new Dictionary<FlavorEnum, string>();
+            FlavorImages.Add(FlavorEnum.Undefined, @"Images\Designs\CakeBackground.jpg");
             FlavorImages.Add(FlavorEnum.Chocolate, @"Images\Flavors\Chocolate.jpg");
             FlavorImages.Add(FlavorEnum.Strawberry, @"Images\Flavors\Strawberry.jpg");
             FlavorImages.Add(FlavorEnum.Vanilla, @"Images\Flavors\Vanilla.jpg");

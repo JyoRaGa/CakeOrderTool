@@ -30,44 +30,34 @@ namespace CakeOrder
 
             SelectedSizesList = new List<CakeSize>();
 
-            SelectedSizesList.Add(
-                new CakeSize
-                {
-                    SizeName = "Six Inch",
-                    SizeNum = SizeEnum.SixInchRound,
-                    ShapeNum = ShapeEnum.Round,
-                }
-            );
+            SelectShape(ShapeEnum.Undefined);
 
-            SelectedSizesList.Add(
-                new CakeSize
-                {
-                    SizeName = "Half Sheet",
-                    SizeNum = SizeEnum.HalfSheet,
-                    ShapeNum = ShapeEnum.Rectangle,
-                }
+            Binding shapeBinding = new Binding();
+            shapeBinding.Path = new PropertyPath("ShapeName");
+            shapeBinding.Mode = BindingMode.OneTime;
+            SelectedShape.DataContext = CakeDesign.SelectedShape;
+            SelectedShape.SetBinding(TextBlock.TextProperty, shapeBinding);
 
-            );
+            Binding sizeBinding = new Binding();
+            sizeBinding.Path = new PropertyPath("SizeName");
+            sizeBinding.Mode = BindingMode.OneTime;
+            sizeBinding.Source = CakeDesign.SelectedSize;
+            SelectedSize.DataContext = CakeDesign.SelectedSize;
+            SelectedSize.SetBinding(TextBlock.TextProperty, sizeBinding);
 
-            SelectedSizesList.Add(
-                new CakeSize
-                {
-                    SizeName = "Two Third Sheet",
-                    SizeNum = SizeEnum.TwoThirdSheet,
-                    ShapeNum = ShapeEnum.Square,
-                }
-            );
+            Binding colorBinding = new Binding();
+            colorBinding.Path = new PropertyPath("ColorName");
+            colorBinding.Mode = BindingMode.OneTime;
+            colorBinding.Source = CakeDesign.SelectedColor;
+            SelectedColor.DataContext = CakeDesign.SelectedColor;
+            SelectedColor.SetBinding(TextBlock.TextProperty, colorBinding);
 
-            SelectedSizesList.Add(
-                new CakeSize
-                {
-                    SizeName = "Custom",
-                    SizeNum = SizeEnum.CustomSize,
-                    ShapeNum = ShapeEnum.Custom,
-                }
-            );
-
-            RenderSelectSizes();
+            Binding flavorBinding = new Binding();
+            flavorBinding.Path = new PropertyPath("FlavorName");
+            flavorBinding.Mode = BindingMode.OneTime;
+            flavorBinding.Source = CakeDesign.SelectedFlavor;
+            SelectedFlavor.DataContext = CakeDesign.SelectedFlavor;
+            SelectedFlavor.SetBinding(TextBlock.TextProperty, flavorBinding);
         }
 
         public void RenderSelectSizes()
@@ -106,8 +96,12 @@ namespace CakeOrder
 
         private void ItemChecked(object sender, RoutedEventArgs e)
         {
+            RadioButton c = (RadioButton)sender;
+            CakeSize cs = (CakeSize)c.DataContext;
 
+            CakeDesign.SelectedSize = cs;
         }
+
         private void DesignButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(MainWindow.DesignView);
@@ -131,6 +125,10 @@ namespace CakeOrder
         private void FlavorButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(MainWindow.FlavorView);
+        }
+        private void SelectionButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

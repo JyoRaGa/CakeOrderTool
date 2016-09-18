@@ -21,9 +21,14 @@ namespace CakeOrder
     /// </summary>
     public partial class ShapePage : Page
     {
+        public List<CakeShape> SelectedShapesList;
+
         public ShapePage()
         {
             InitializeComponent();
+
+            SelectedShapesList = new List<CakeShape>();
+
             foreach (CakeShape c in DesignLists.DefaultShapesList)
             {
                 c.ShapeImage = new Image();
@@ -31,6 +36,74 @@ namespace CakeOrder
                 ImageList.Items.Add(c);
             }
 
+            Binding shapeBinding = new Binding();
+            shapeBinding.Path = new PropertyPath("ShapeName");
+            shapeBinding.Mode = BindingMode.OneTime;
+            SelectedShape.DataContext = CakeDesign.SelectedShape;
+            SelectedShape.SetBinding(TextBlock.TextProperty, shapeBinding);
+
+            Binding sizeBinding = new Binding();
+            sizeBinding.Path = new PropertyPath("SizeName");
+            sizeBinding.Mode = BindingMode.OneTime;
+            sizeBinding.Source = CakeDesign.SelectedSize;
+            SelectedSize.DataContext = CakeDesign.SelectedSize;
+            SelectedSize.SetBinding(TextBlock.TextProperty, sizeBinding);
+
+            Binding colorBinding = new Binding();
+            colorBinding.Path = new PropertyPath("ColorName");
+            colorBinding.Mode = BindingMode.OneTime;
+            colorBinding.Source = CakeDesign.SelectedColor;
+            SelectedColor.DataContext = CakeDesign.SelectedColor;
+            SelectedColor.SetBinding(TextBlock.TextProperty, colorBinding);
+
+            Binding flavorBinding = new Binding();
+            flavorBinding.Path = new PropertyPath("FlavorName");
+            flavorBinding.Mode = BindingMode.OneTime;
+            flavorBinding.Source = CakeDesign.SelectedFlavor;
+            SelectedFlavor.DataContext = CakeDesign.SelectedFlavor;
+            SelectedFlavor.SetBinding(TextBlock.TextProperty, flavorBinding);
+        }
+
+        public void SelectSize(SizeEnum size)
+        {
+            SelectedShapesList.Clear();
+
+            if (size == SizeEnum.Undefined)
+            {
+                foreach (CakeShape c in DesignLists.DefaultShapesList)
+                {
+                    SelectedShapesList.Add(c);
+                }
+            }
+            else
+            {
+                foreach (CakeShape c in DesignLists.DefaultShapesList)
+                {
+                    bool shapeFound = false;
+                    foreach (CakeSize s in DesignLists.DefaultSizesList.Where(x => (x.SizeNum == size) && (x.ShapeNum == c.ShapeNum)))
+                    {
+                        SelectedShapesList.Add(c);
+                        shapeFound = true;
+                        break;
+                    }
+
+                    if (shapeFound) break; 
+                }
+            }
+
+            RenderSelectShapes();
+        }
+
+        public void RenderSelectShapes()
+        {
+            ImageList.Items.Clear();
+
+            foreach (CakeShape c in SelectedShapesList)
+            {
+                c.ShapeImage = new Image();
+                c.ShapeImage.Source = new BitmapImage(new Uri(CakeShape.ShapeImages[c.ShapeNum], UriKind.Relative));
+                ImageList.Items.Add(c);
+            }
         }
 
         private void ItemChecked(object sender, RoutedEventArgs e)
@@ -38,8 +111,7 @@ namespace CakeOrder
             RadioButton c = (RadioButton)sender;
             CakeShape cs = (CakeShape)c.DataContext;
 
-            CakeDesign.SelectedShape = cs.ShapeNum;
-            MainWindow.SelectShape(CakeDesign.SelectedShape);
+            MainWindow.SelectShape(cs);
         }
         private void DesignButton_Click(object sender, RoutedEventArgs e)
         {
@@ -67,7 +139,7 @@ namespace CakeOrder
             this.NavigationService.Navigate(MainWindow.FlavorView);
         }
 
-        private void ItemUnchecked(object sender, RoutedEventArgs e)
+        private void SelectionButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

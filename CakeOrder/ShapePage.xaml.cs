@@ -35,18 +35,10 @@ namespace CakeOrder
 
         private void ItemChecked(object sender, RoutedEventArgs e)
         {
-            CheckBox c = (CheckBox)sender;
+            RadioButton c = (RadioButton)sender;
             CakeShape cs = (CakeShape)c.DataContext;
 
-            if (c.IsChecked.Value)
-            {
-                CakeDesign.SelectedShape = cs.ShapeNum;
-            }
-            else
-            {
-                CakeDesign.SelectedShape = ShapeEnum.Undefined;
-            }
-
+            CakeDesign.SelectedShape = cs.ShapeNum;
             MainWindow.SelectShape(CakeDesign.SelectedShape);
         }
         private void DesignButton_Click(object sender, RoutedEventArgs e)
@@ -73,6 +65,11 @@ namespace CakeOrder
         private void FlavorButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(MainWindow.FlavorView);
+        }
+
+        private void ItemUnchecked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

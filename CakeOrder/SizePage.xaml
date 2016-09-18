@@ -58,7 +58,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate DataType="{x:Type local:CakeSize}">
                     <StackPanel>
-                        <CheckBox Name ="ItemCheck" Grid.Column="1"  Content="{Binding SizeName}" Width="150" Checked="ItemChecked"/>
+                        <RadioButton Name ="ItemCheck" GroupName ="SizeGroup" Grid.Column="1"  Content="{Binding SizeName}" Width="150" Checked="ItemChecked"/>
                         <ContentControl Margin="3" Content="{Binding SizeImage}" Width="150"/>
                     </StackPanel>
                 </DataTemplate>

@@ -77,6 +77,7 @@ namespace CakeOrder
             {
                 foreach (CakeSize c in DesignLists.DefaultSizesList)
                 {
+                    if (c.SizeNum == SizeEnum.Undefined) continue;
                     SelectedSizesList.Add(c);
                 }
             }
@@ -84,6 +85,7 @@ namespace CakeOrder
             {
                 foreach (CakeSize c in DesignLists.DefaultSizesList.Where(x => x.ShapeNum == shape))
                 {
+                    if (c.SizeNum == SizeEnum.Undefined) continue;
                     SelectedSizesList.Add(c);
                 }
             }
@@ -125,7 +127,7 @@ namespace CakeOrder
         }
         private void SelectionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

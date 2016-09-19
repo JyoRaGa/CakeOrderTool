@@ -27,6 +27,7 @@ namespace CakeOrder
 
             foreach (CakeColor c in DesignLists.DefaultColorsList)
             {
+                if (c.ColorNum == ColorEnum.Undefined) continue;
                 c.ColorImage = new Image();
                 c.ColorImage.Source = new BitmapImage(new Uri(CakeColor.ColorImages[c.ColorNum], UriKind.Relative));
                 ImageList.Items.Add(c);

@@ -31,6 +31,7 @@ namespace CakeOrder
 
             foreach (CakeShape c in DesignLists.DefaultShapesList)
             {
+                if (c.ShapeNum == ShapeEnum.Undefined) continue;
                 c.ShapeImage = new Image();
                 c.ShapeImage.Source = new BitmapImage(new Uri(CakeShape.ShapeImages[c.ShapeNum], UriKind.Relative));
                 ImageList.Items.Add(c);
@@ -138,7 +139,7 @@ namespace CakeOrder
 
         private void SelectionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.ClearSelection((Button)sender);
         }
     }
 }

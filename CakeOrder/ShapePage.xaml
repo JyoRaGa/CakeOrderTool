@@ -59,19 +59,19 @@
                     <ColumnDefinition Width="200"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0"  Width="200" Click="SelectionButton_Click"></Button>
+                <Button Name ="ClearShape" Grid.Row="0" Grid.Column="0"  Width="200" Click="SelectionButton_Click"></Button>
                 <TextBlock Grid.Row="0" Grid.Column="0"  Text ="Shape" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
                 <TextBlock Name ="SelectedShape" Grid.Row="0" Grid.Column="0"  Margin="8" VerticalAlignment="Bottom"
                           HorizontalAlignment="Center"  Text ="Not Selected" />
-                <Button Grid.Row="0" Grid.Column="1"  Width="200" Click="SelectionButton_Click"></Button>
+                <Button Name ="ClearSize" Grid.Row="0" Grid.Column="1"  Width="200" Click="SelectionButton_Click"></Button>
                 <TextBlock Grid.Row="0" Grid.Column="1"  Text ="Size" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
                 <TextBlock Name ="SelectedSize" Grid.Row="0" Grid.Column="1"  Margin="8" VerticalAlignment="Bottom"
                           HorizontalAlignment="Center"  Text ="Not Selected" />
-                <Button Grid.Row="1" Grid.Column="0"  Width="200" Click="SelectionButton_Click"></Button>
+                <Button Name ="ClearColor" Grid.Row="1" Grid.Column="0"  Width="200" Click="SelectionButton_Click"></Button>
                 <TextBlock Grid.Row="1" Grid.Column="0"  Text ="Color" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
                 <TextBlock Name ="SelectedColor" Grid.Row="1" Grid.Column="0"  Margin="8" VerticalAlignment="Bottom"
                           HorizontalAlignment="Center"  Text ="Not Selected" />
-                <Button Grid.Row="1" Grid.Column="1"  Width="200" Click="SelectionButton_Click"></Button>
+                <Button Name ="ClearFlavor" Grid.Row="1" Grid.Column="1"  Width="200" Click="SelectionButton_Click"></Button>
                 <TextBlock Grid.Row="1" Grid.Column="1"  Text ="Color" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
                 <TextBlock Name ="SelectedFlavor" Grid.Row="1" Grid.Column="1"  Margin="8" VerticalAlignment="Bottom"
                           HorizontalAlignment="Center"  Text ="Not Selected" />

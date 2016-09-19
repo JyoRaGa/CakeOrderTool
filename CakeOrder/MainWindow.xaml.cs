@@ -130,5 +130,72 @@ namespace CakeOrder
             ColorView.SelectedFlavor.DataContext = flavor;
             FlavorView.SelectedFlavor.DataContext = flavor;
         }
+
+        public static void ClearSelection(Button b)
+        {
+            if (b.Name.Equals("ClearDesign"))
+            {
+                CakeDesign.SelectedDesign = new CakeDesign
+                {
+                    DesignName = "Not Selected",
+                    DesignNum = DesignEnum.Undefined,
+                    DefaultColor = ColorEnum.Blue,
+                    DefaultShape = ShapeEnum.Rectangle,
+                    DefaultSize = SizeEnum.HalfSheet,
+                    DefaultFlavor = FlavorEnum.Vanilla,
+                    Color = ColorEnum.Undefined,
+                    Shape = ShapeEnum.Undefined,
+                    Size = SizeEnum.Undefined,
+                    Flavor = FlavorEnum.Undefined,
+                };
+
+                LoadImage(CakeDesign.DesignImages[DesignEnum.Undefined]);
+            }
+
+            else if (b.Name.Equals("ClearShape"))
+            {
+                CakeDesign.SelectedShape = new CakeShape
+                {
+                    ShapeName = "Not selected",
+                    ShapeNum = ShapeEnum.Undefined,
+                };
+
+                SelectShape(CakeDesign.SelectedShape);
+            }
+
+            else if (b.Name.Equals("ClearSize"))
+            {
+                CakeDesign.SelectedSize = new CakeSize
+                {
+                    SizeName = "Not selected",
+                    SizeNum = SizeEnum.Undefined,
+                    ShapeNum = ShapeEnum.Undefined,
+                };
+
+                SelectSize(CakeDesign.SelectedSize);
+            }
+
+            else if (b.Name.Equals("ClearColor"))
+            {
+                CakeDesign.SelectedColor = new CakeColor
+                {
+                    ColorName = "Not selected",
+                    ColorNum = ColorEnum.Undefined,
+                };
+
+                SelectColor(CakeDesign.SelectedColor);
+            }
+
+            else if (b.Name.Equals("ClearFlavor"))
+            {
+                CakeDesign.SelectedFlavor = new CakeFlavor
+                {
+                    FlavorName = "Not selected",
+                    FlavorNum = FlavorEnum.Undefined,
+                };
+
+                SelectFlavor(CakeDesign.SelectedFlavor);
+            }
+        }
     }
 }

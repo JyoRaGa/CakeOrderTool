@@ -515,10 +515,10 @@ namespace CakeOrder.DataClasses
     public class CakeDesign
     {
         public static CakeShape SelectedShape = new CakeShape
-                {
-                    ShapeName = "Not selected",
-                    ShapeNum = ShapeEnum.Undefined,
-                };
+        {
+            ShapeName = "Not selected",
+            ShapeNum = ShapeEnum.Undefined,
+        };
 
         public static CakeSize SelectedSize = new CakeSize
         {

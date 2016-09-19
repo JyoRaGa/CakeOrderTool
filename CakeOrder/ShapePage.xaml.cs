@@ -45,21 +45,18 @@ namespace CakeOrder
             Binding sizeBinding = new Binding();
             sizeBinding.Path = new PropertyPath("SizeName");
             sizeBinding.Mode = BindingMode.OneTime;
-            sizeBinding.Source = CakeDesign.SelectedSize;
             SelectedSize.DataContext = CakeDesign.SelectedSize;
             SelectedSize.SetBinding(TextBlock.TextProperty, sizeBinding);
 
             Binding colorBinding = new Binding();
             colorBinding.Path = new PropertyPath("ColorName");
             colorBinding.Mode = BindingMode.OneTime;
-            colorBinding.Source = CakeDesign.SelectedColor;
             SelectedColor.DataContext = CakeDesign.SelectedColor;
             SelectedColor.SetBinding(TextBlock.TextProperty, colorBinding);
 
             Binding flavorBinding = new Binding();
             flavorBinding.Path = new PropertyPath("FlavorName");
             flavorBinding.Mode = BindingMode.OneTime;
-            flavorBinding.Source = CakeDesign.SelectedFlavor;
             SelectedFlavor.DataContext = CakeDesign.SelectedFlavor;
             SelectedFlavor.SetBinding(TextBlock.TextProperty, flavorBinding);
         }

@@ -93,7 +93,7 @@ namespace CakeOrder
 
         private void SelectionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.ClearSelection((Button)sender);
         }
     }
 }

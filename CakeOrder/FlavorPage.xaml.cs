@@ -26,6 +26,7 @@ namespace CakeOrder
             InitializeComponent();
             foreach (CakeFlavor c in DesignLists.DefaultFlavorsList)
             {
+                if (c.FlavorNum == FlavorEnum.Undefined) continue;
                 c.FlavorImage = new Image();
                 c.FlavorImage.Source = new BitmapImage(new Uri(CakeFlavor.FlavorImages[c.FlavorNum], UriKind.Relative));
                 ImageList.Items.Add(c);
@@ -90,7 +91,7 @@ namespace CakeOrder
         }
         private void SelectionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.ClearSelection((Button)sender);
         }
     }
 }

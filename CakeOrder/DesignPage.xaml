@@ -47,7 +47,8 @@
                 Select a cake Flavor
             </Button>
 
-            <Image Grid.Row="5" Name="SelectedCakeImage" Margin="2" Source="Images\Designs\CakeBackground.jpg"></Image>
+            <Button Name ="ClearDesign" Grid.Row="5" Margin="0" Click="SelectionButton_Click" Content=""></Button>
+            <Image Grid.Row="5" Name="SelectedCakeImage" Margin="10" Source="Images\Designs\CakeBackground.jpg"></Image>
             <Grid Grid.Row="6" Name="SelectionGrid"  VerticalAlignment="Top">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>

@@ -68,8 +68,9 @@ namespace CakeOrder
                 c.ShapeImage = new Image();
                 c.ShapeImage.Source = new BitmapImage(new Uri(CakeShape.ShapeImages[c.ShapeNum], UriKind.Relative));
 
-                if (size != SizeEnum.Undefined &&
-                    DesignLists.DefaultSizesList.Exists(x => (x.SizeNum == size) && (x.ShapeNum == c.ShapeNum))
+                if (size == SizeEnum.Undefined ||
+                    (size != SizeEnum.Undefined &&
+                    DesignLists.DefaultSizesList.Exists(x => (x.SizeNum == size) && (x.ShapeNum == c.ShapeNum)))
                 )
                 {
                     c.Enabled = true;

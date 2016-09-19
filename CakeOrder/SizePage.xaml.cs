@@ -70,8 +70,9 @@ namespace CakeOrder
                 c.SizeImage = new Image();
                 c.SizeImage.Source = new BitmapImage(new Uri(CakeSize.SizeImages[c.SizeNum], UriKind.Relative));
 
-                if (shape != ShapeEnum.Undefined &&
-                DesignLists.DefaultSizesList.Exists(x => (x.ShapeNum == shape) && (x.SizeNum == c.SizeNum))
+                if (shape == ShapeEnum.Undefined ||
+                    (shape != ShapeEnum.Undefined &&
+                DesignLists.DefaultSizesList.Exists(x => (x.ShapeNum == shape) && (x.SizeNum == c.SizeNum)))
                 )
                 {
                     c.Enabled = true;
@@ -120,8 +121,8 @@ namespace CakeOrder
             this.NavigationService.Navigate(MainWindow.FlavorView);
         }
         private void SelectionButton_Click(object sender, RoutedEventArgs e)
-        {
-            
+        {            
+            MainWindow.ClearSelection((Button)sender);
         }
     }
 }

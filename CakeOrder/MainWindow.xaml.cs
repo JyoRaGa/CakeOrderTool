@@ -152,7 +152,7 @@ namespace CakeOrder
                 LoadImage(CakeDesign.DesignImages[DesignEnum.Undefined]);
             }
 
-            else if (b.Name.Equals("ClearShape"))
+            else if (b.Name.Equals("ClearShape") || (b.Name.Equals("ClearSize")))
             {
                 CakeDesign.SelectedShape = new CakeShape
                 {
@@ -161,10 +161,7 @@ namespace CakeOrder
                 };
 
                 SelectShape(CakeDesign.SelectedShape);
-            }
 
-            else if (b.Name.Equals("ClearSize"))
-            {
                 CakeDesign.SelectedSize = new CakeSize
                 {
                     SizeName = "Not selected",

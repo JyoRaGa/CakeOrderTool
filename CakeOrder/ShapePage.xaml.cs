@@ -21,13 +21,9 @@ namespace CakeOrder
     /// </summary>
     public partial class ShapePage : Page
     {
-        public List<CakeShape> SelectedShapesList;
-
         public ShapePage()
         {
             InitializeComponent();
-
-            SelectedShapesList = new List<CakeShape>();
 
             foreach (CakeShape c in DesignLists.DefaultShapesList)
             {
@@ -64,42 +60,27 @@ namespace CakeOrder
 
         public void SelectSize(SizeEnum size)
         {
-            SelectedShapesList.Clear();
-
-            if (size == SizeEnum.Undefined)
-            {
-                foreach (CakeShape c in DesignLists.DefaultShapesList)
-                {
-                    SelectedShapesList.Add(c);
-                }
-            }
-            else
-            {
-                foreach (CakeShape c in DesignLists.DefaultShapesList)
-                {
-                    bool shapeFound = false;
-                    foreach (CakeSize s in DesignLists.DefaultSizesList.Where(x => (x.SizeNum == size) && (x.ShapeNum == c.ShapeNum)))
-                    {
-                        SelectedShapesList.Add(c);
-                        shapeFound = true;
-                        break;
-                    }
-
-                    if (shapeFound) break; 
-                }
-            }
-
-            RenderSelectShapes();
-        }
-
-        public void RenderSelectShapes()
-        {
             ImageList.Items.Clear();
 
-            foreach (CakeShape c in SelectedShapesList)
+            foreach (CakeShape c in DesignLists.DefaultShapesList)
             {
+                if (c.ShapeNum == ShapeEnum.Undefined) continue;
                 c.ShapeImage = new Image();
                 c.ShapeImage.Source = new BitmapImage(new Uri(CakeShape.ShapeImages[c.ShapeNum], UriKind.Relative));
+
+                if (size != SizeEnum.Undefined &&
+                    DesignLists.DefaultSizesList.Exists(x => (x.SizeNum == size) && (x.ShapeNum == c.ShapeNum))
+                )
+                {
+                    c.Enabled = true;
+                    c.ShapeImage.Opacity = 1;
+                }
+                else
+                {
+                    c.Enabled = false;
+                    c.ShapeImage.Opacity = 0.2;
+                }
+
                 ImageList.Items.Add(c);
             }
         }

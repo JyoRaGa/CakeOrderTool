@@ -251,6 +251,7 @@ namespace CakeOrder.DataClasses
                 {
                     ShapeName = "Not selected",
                     ShapeNum = ShapeEnum.Undefined,
+                    Enabled = true,
                 }
             );
 
@@ -259,6 +260,7 @@ namespace CakeOrder.DataClasses
                 {
                     ShapeName = "Round",
                     ShapeNum = ShapeEnum.Round,
+                    Enabled = true,
                 }
             );
 
@@ -267,6 +269,7 @@ namespace CakeOrder.DataClasses
                 {
                     ShapeName = "Rectangle",
                     ShapeNum = ShapeEnum.Rectangle,
+                    Enabled = true,
                 }
             );
 
@@ -275,6 +278,7 @@ namespace CakeOrder.DataClasses
                 {
                     ShapeName = "Square",
                     ShapeNum = ShapeEnum.Square,
+                    Enabled = true,
                 }
             );
 
@@ -283,6 +287,7 @@ namespace CakeOrder.DataClasses
                 {
                     ShapeName = "Custom",
                     ShapeNum = ShapeEnum.Custom,
+                    Enabled = true,
                 }
             );
 
@@ -296,6 +301,7 @@ namespace CakeOrder.DataClasses
                     SizeName = "Not selected",
                     SizeNum = SizeEnum.Undefined,
                     ShapeNum = ShapeEnum.Undefined,
+                    Enabled = true,
                 }
             );
 
@@ -306,6 +312,7 @@ namespace CakeOrder.DataClasses
                     SizeName = "Six Inch",
                     SizeNum = SizeEnum.SixInchRound,
                     ShapeNum = ShapeEnum.Round,
+                    Enabled = true,
                 }
             );
 
@@ -315,6 +322,7 @@ namespace CakeOrder.DataClasses
                     SizeName = "Nine Inch",
                     SizeNum = SizeEnum.NineInchRound,
                     ShapeNum = ShapeEnum.Round,
+                    Enabled = true,
                 }
             );
 
@@ -324,8 +332,8 @@ namespace CakeOrder.DataClasses
                     SizeName = "Half Sheet",
                     SizeNum = SizeEnum.HalfSheet,
                     ShapeNum = ShapeEnum.Rectangle,
+                    Enabled = true,
                 }
-
             );
 
             DefaultSizesList.Add(
@@ -334,8 +342,8 @@ namespace CakeOrder.DataClasses
                     SizeName = "Full Sheet",
                     SizeNum = SizeEnum.FullSheet,
                     ShapeNum = ShapeEnum.Rectangle,
+                    Enabled = true,
                 }
-
             );
 
             DefaultSizesList.Add(
@@ -344,8 +352,8 @@ namespace CakeOrder.DataClasses
                     SizeName = "Double Sheet",
                     SizeNum = SizeEnum.DoubleSheet,
                     ShapeNum = ShapeEnum.Rectangle,
+                    Enabled = true,
                 }
-
             );
 
             DefaultSizesList.Add(
@@ -354,8 +362,8 @@ namespace CakeOrder.DataClasses
                     SizeName = "One and One Half Sheet",
                     SizeNum = SizeEnum.OneOneHalfSheet,
                     ShapeNum = ShapeEnum.Rectangle,
+                    Enabled = true,
                 }
-
             );
 
             DefaultSizesList.Add(
@@ -364,8 +372,8 @@ namespace CakeOrder.DataClasses
                     SizeName = "One and One Third Sheet",
                     SizeNum = SizeEnum.OneOneThirdSheet,
                     ShapeNum = ShapeEnum.Rectangle,
+                    Enabled = true,
                 }
-
             );
 
 
@@ -375,6 +383,7 @@ namespace CakeOrder.DataClasses
                     SizeName = "One Third Sheet",
                     SizeNum = SizeEnum.OneThirdSheet,
                     ShapeNum = ShapeEnum.Rectangle,
+                    Enabled = true,
                 }
             );
 
@@ -384,6 +393,7 @@ namespace CakeOrder.DataClasses
                     SizeName = "Two Third Sheet",
                     SizeNum = SizeEnum.TwoThirdSheet,
                     ShapeNum = ShapeEnum.Square,
+                    Enabled = true,
                 }
             );
 
@@ -393,6 +403,7 @@ namespace CakeOrder.DataClasses
                     SizeName = "Custom",
                     SizeNum = SizeEnum.CustomSize,
                     ShapeNum = ShapeEnum.Custom,
+                    Enabled = true,
                 }
             );
 
@@ -518,6 +529,7 @@ namespace CakeOrder.DataClasses
         {
             ShapeName = "Not selected",
             ShapeNum = ShapeEnum.Undefined,
+            Enabled = true,
         };
 
         public static CakeSize SelectedSize = new CakeSize
@@ -525,6 +537,7 @@ namespace CakeOrder.DataClasses
             SizeName = "Not selected",
             SizeNum = SizeEnum.Undefined,
             ShapeNum = ShapeEnum.Undefined,
+            Enabled = true,
         };
 
         public static CakeColor SelectedColor = new CakeColor
@@ -592,6 +605,7 @@ namespace CakeOrder.DataClasses
         public ShapeEnum ShapeNum { get; set; }
         public SizeEnum SizeNum { get; set; }
         public Image ShapeImage { get; set; }
+        public bool Enabled { get; set; }
 
         static CakeShape()
         {
@@ -612,6 +626,8 @@ namespace CakeOrder.DataClasses
         public SizeEnum SizeNum { get; set; }
         public ShapeEnum ShapeNum { get; set; }
         public Image SizeImage { get; set; }
+        public bool Enabled { get; set; }
+
 
         static CakeSize()
         {

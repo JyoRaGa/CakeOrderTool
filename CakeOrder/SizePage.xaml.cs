@@ -22,15 +22,17 @@ namespace CakeOrder
     public partial class SizePage : Page
     {
 
-        public List<CakeSize> SelectedSizesList;
-
         public SizePage()
         {
             InitializeComponent();
 
-            SelectedSizesList = new List<CakeSize>();
-
-            SelectShape(ShapeEnum.Undefined);
+            foreach (CakeSize c in DesignLists.DefaultSizesList)
+            {
+                if (c.SizeNum == SizeEnum.Undefined) continue;
+                c.SizeImage = new Image();
+                c.SizeImage.Source = new BitmapImage(new Uri(CakeSize.SizeImages[c.SizeNum], UriKind.Relative));
+                ImageList.Items.Add(c);
+            }
 
             Binding shapeBinding = new Binding();
             shapeBinding.Path = new PropertyPath("ShapeName");
@@ -57,40 +59,32 @@ namespace CakeOrder
             SelectedFlavor.SetBinding(TextBlock.TextProperty, flavorBinding);
         }
 
-        public void RenderSelectSizes()
+        public void SelectShape(ShapeEnum shape)
         {
             ImageList.Items.Clear();
 
-            foreach (CakeSize c in SelectedSizesList)
+            foreach (CakeSize c in DesignLists.DefaultSizesList)
             {
+                if (c.SizeNum == SizeEnum.Undefined) continue;
+
                 c.SizeImage = new Image();
                 c.SizeImage.Source = new BitmapImage(new Uri(CakeSize.SizeImages[c.SizeNum], UriKind.Relative));
+
+                if (shape != ShapeEnum.Undefined &&
+                DesignLists.DefaultSizesList.Exists(x => (x.ShapeNum == shape) && (x.SizeNum == c.SizeNum))
+                )
+                {
+                    c.Enabled = true;
+                    c.SizeImage.Opacity = 1;
+                }
+                else
+                {
+                    c.Enabled = false;
+                    c.SizeImage.Opacity = 0.2;
+                }
+
                 ImageList.Items.Add(c);
             }
-        }
-
-        public void SelectShape(ShapeEnum shape)
-        {
-            SelectedSizesList.Clear();
-
-            if (shape == ShapeEnum.Undefined)
-            {
-                foreach (CakeSize c in DesignLists.DefaultSizesList)
-                {
-                    if (c.SizeNum == SizeEnum.Undefined) continue;
-                    SelectedSizesList.Add(c);
-                }
-            }
-            else
-            {
-                foreach (CakeSize c in DesignLists.DefaultSizesList.Where(x => x.ShapeNum == shape))
-                {
-                    if (c.SizeNum == SizeEnum.Undefined) continue;
-                    SelectedSizesList.Add(c);
-                }
-            }
-
-            RenderSelectSizes();
         }
 
         private void ItemChecked(object sender, RoutedEventArgs e)

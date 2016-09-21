@@ -73,7 +73,7 @@
                 <TextBlock Name ="SelectedColor" Grid.Row="1" Grid.Column="0"  Margin="8" VerticalAlignment="Bottom"
                           HorizontalAlignment="Center"  Text ="Not Selected" />
                 <Button Name ="ClearFlavor" Grid.Row="1" Grid.Column="1"  Width="200" Click="SelectionButton_Click"></Button>
-                <TextBlock Grid.Row="1" Grid.Column="1"  Text ="Color" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1"  Text ="Flavor" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
                 <TextBlock Name ="SelectedFlavor" Grid.Row="1" Grid.Column="1"  Margin="8" VerticalAlignment="Bottom"
                           HorizontalAlignment="Center"  Text ="Not Selected" />
             </Grid>

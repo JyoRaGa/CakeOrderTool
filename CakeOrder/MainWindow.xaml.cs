@@ -63,12 +63,22 @@ namespace CakeOrder
         {
             CakeDesign.SelectedDesign = design;
             LoadImage(CakeDesign.DesignImages[design.DesignNum]);
+
+            if (design.DesignNum == DesignEnum.Undefined)
+            {
+                foreach (CakeDesign c in DesignView.ImageList.Items)
+                {
+                    if (c.Selected) c.Selected = false;
+                }
+
+                DesignView.LoadImageList();
+            }
         }
 
         public static void SelectShape(CakeShape shape)
         {
             CakeDesign.SelectedShape = shape;
-            SizeView.SelectShape(shape.ShapeNum);
+            SizeView.LoadImageList();
 
             if (CakeDesign.SelectedDesign.DesignNum == DesignEnum.Undefined)
             {
@@ -80,12 +90,22 @@ namespace CakeOrder
             SizeView.SelectedShape.DataContext = shape;
             ColorView.SelectedShape.DataContext = shape;
             FlavorView.SelectedShape.DataContext = shape;
+
+            if (shape.ShapeNum == ShapeEnum.Undefined)
+            {
+                foreach (CakeShape c in ShapeView.ImageList.Items)
+                {
+                    if (c.Selected) c.Selected = false;
+                }
+
+                ShapeView.LoadImageList();
+            }
         }
 
         public static void SelectSize(CakeSize size)
         {
             CakeDesign.SelectedSize = size;
-            ShapeView.SelectSize(size.SizeNum);
+            ShapeView.LoadImageList();
 
             if (CakeDesign.SelectedDesign.DesignNum == DesignEnum.Undefined)
             {
@@ -97,6 +117,16 @@ namespace CakeOrder
             SizeView.SelectedSize.DataContext = size;
             ColorView.SelectedSize.DataContext = size;
             FlavorView.SelectedSize.DataContext = size;
+
+            if (size.SizeNum == SizeEnum.Undefined)
+            {
+                foreach (CakeSize c in SizeView.ImageList.Items)
+                {
+                    if (c.Selected) c.Selected = false;
+                }
+
+                SizeView.LoadImageList();
+            }
         }
 
         public static void SelectColor(CakeColor color)
@@ -113,6 +143,16 @@ namespace CakeOrder
             SizeView.SelectedColor.DataContext = color;
             ColorView.SelectedColor.DataContext = color;
             FlavorView.SelectedColor.DataContext = color;
+
+            if (color.ColorNum == ColorEnum.Undefined)
+            {
+                foreach (CakeColor c in ColorView.ImageList.Items)
+                {
+                    if (c.Selected) c.Selected = false;
+                }
+
+                ColorView.LoadImageList();
+            }
         }
 
         public static void SelectFlavor(CakeFlavor flavor)
@@ -129,6 +169,16 @@ namespace CakeOrder
             SizeView.SelectedFlavor.DataContext = flavor;
             ColorView.SelectedFlavor.DataContext = flavor;
             FlavorView.SelectedFlavor.DataContext = flavor;
+
+            if (flavor.FlavorNum == FlavorEnum.Undefined)
+            {
+                foreach (CakeFlavor c in FlavorView.ImageList.Items)
+                {
+                    if (c.Selected) c.Selected = false;
+                }
+
+                FlavorView.LoadImageList();
+            }
         }
 
         public static void ClearSelection(Button b)
@@ -149,7 +199,8 @@ namespace CakeOrder
                     Flavor = FlavorEnum.Undefined,
                 };
 
-                LoadImage(CakeDesign.DesignImages[DesignEnum.Undefined]);
+                SelectDesign(CakeDesign.SelectedDesign);
+                
             }
 
             else if (b.Name.Equals("ClearShape") || (b.Name.Equals("ClearSize")))

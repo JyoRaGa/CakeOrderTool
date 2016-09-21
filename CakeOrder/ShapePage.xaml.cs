@@ -58,7 +58,7 @@ namespace CakeOrder
             SelectedFlavor.SetBinding(TextBlock.TextProperty, flavorBinding);
         }
 
-        public void SelectSize(SizeEnum size)
+        public void LoadImageList()
         {
             ImageList.Items.Clear();
 
@@ -68,9 +68,9 @@ namespace CakeOrder
                 c.ShapeImage = new Image();
                 c.ShapeImage.Source = new BitmapImage(new Uri(CakeShape.ShapeImages[c.ShapeNum], UriKind.Relative));
 
-                if (size == SizeEnum.Undefined ||
-                    (size != SizeEnum.Undefined &&
-                    DesignLists.DefaultSizesList.Exists(x => (x.SizeNum == size) && (x.ShapeNum == c.ShapeNum)))
+                if (CakeDesign.SelectedSize.SizeNum == SizeEnum.Undefined ||
+                    (CakeDesign.SelectedSize.SizeNum != SizeEnum.Undefined &&
+                    DesignLists.DefaultSizesList.Exists(x => (x.SizeNum == CakeDesign.SelectedSize.SizeNum) && (x.ShapeNum == c.ShapeNum)))
                 )
                 {
                     c.Enabled = true;

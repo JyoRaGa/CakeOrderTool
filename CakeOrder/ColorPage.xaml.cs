@@ -25,13 +25,7 @@ namespace CakeOrder
         {
             InitializeComponent();
 
-            foreach (CakeColor c in DesignLists.DefaultColorsList)
-            {
-                if (c.ColorNum == ColorEnum.Undefined) continue;
-                c.ColorImage = new Image();
-                c.ColorImage.Source = new BitmapImage(new Uri(CakeColor.ColorImages[c.ColorNum], UriKind.Relative));
-                ImageList.Items.Add(c);
-            }
+            LoadImageList();
 
             Binding shapeBinding = new Binding();
             shapeBinding.Path = new PropertyPath("ShapeName");
@@ -56,6 +50,19 @@ namespace CakeOrder
             flavorBinding.Mode = BindingMode.OneTime;
             SelectedFlavor.DataContext = CakeDesign.SelectedFlavor;
             SelectedFlavor.SetBinding(TextBlock.TextProperty, flavorBinding);
+        }
+
+        public void LoadImageList()
+        {
+            ImageList.Items.Clear();
+
+            foreach (CakeColor c in DesignLists.DefaultColorsList)
+            {
+                if (c.ColorNum == ColorEnum.Undefined) continue;
+                c.ColorImage = new Image();
+                c.ColorImage.Source = new BitmapImage(new Uri(CakeColor.ColorImages[c.ColorNum], UriKind.Relative));
+                ImageList.Items.Add(c);
+            }
         }
 
         private void ItemChecked(object sender, RoutedEventArgs e)

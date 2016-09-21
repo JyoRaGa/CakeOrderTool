@@ -530,6 +530,7 @@ namespace CakeOrder.DataClasses
             ShapeName = "Not selected",
             ShapeNum = ShapeEnum.Undefined,
             Enabled = true,
+            Selected = false,
         };
 
         public static CakeSize SelectedSize = new CakeSize
@@ -538,18 +539,21 @@ namespace CakeOrder.DataClasses
             SizeNum = SizeEnum.Undefined,
             ShapeNum = ShapeEnum.Undefined,
             Enabled = true,
+            Selected = false,
         };
 
         public static CakeColor SelectedColor = new CakeColor
         {
             ColorName = "Not selected",
             ColorNum = ColorEnum.Undefined,
+            Selected = false,
         };
 
         public static CakeFlavor SelectedFlavor = new CakeFlavor
         {
             FlavorName = "Not selected",
             FlavorNum = FlavorEnum.Undefined,
+            Selected = false,
         };
 
         public static CakeDesign SelectedDesign = new CakeDesign
@@ -564,6 +568,7 @@ namespace CakeOrder.DataClasses
             Shape = ShapeEnum.Undefined,
             Size = SizeEnum.Undefined,
             Flavor = FlavorEnum.Undefined,
+            Selected = false,
         };
 
         public static Dictionary<DesignEnum, string> DesignImages = new Dictionary<DesignEnum, string>();
@@ -579,6 +584,7 @@ namespace CakeOrder.DataClasses
         public FlavorEnum DefaultFlavor { get; set; }
         public FlavorEnum Flavor { get; set; }
         public Image CakeImage { get; set; }
+        public bool Selected { get; set; }
 
         static CakeDesign()
         {
@@ -606,6 +612,7 @@ namespace CakeOrder.DataClasses
         public SizeEnum SizeNum { get; set; }
         public Image ShapeImage { get; set; }
         public bool Enabled { get; set; }
+        public bool Selected { get; set; }
 
         static CakeShape()
         {
@@ -627,7 +634,7 @@ namespace CakeOrder.DataClasses
         public ShapeEnum ShapeNum { get; set; }
         public Image SizeImage { get; set; }
         public bool Enabled { get; set; }
-
+        public bool Selected { get; set; }
 
         static CakeSize()
         {
@@ -654,6 +661,7 @@ namespace CakeOrder.DataClasses
         public string ColorName { get; set; }
         public ColorEnum ColorNum { get; set; }
         public Image ColorImage { get; set; }
+        public bool Selected { get; set; }
 
         static CakeColor()
         {
@@ -677,6 +685,7 @@ namespace CakeOrder.DataClasses
         public string FlavorName { get; set; }
         public FlavorEnum FlavorNum { get; set; }
         public Image FlavorImage { get; set; }
+        public bool Selected { get; set; }
 
         static CakeFlavor()
         {

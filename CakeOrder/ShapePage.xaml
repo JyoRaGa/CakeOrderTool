@@ -50,11 +50,11 @@
             <Button Grid.Row="4" Grid.Column="1" Name="FlavorClearButton" Content="X" Margin="0,2,2,2" FontSize="16" FontWeight="Bold" 
                     IsEnabled="false"  Click="SelectionButton_Click"/>
 
-            <Image Grid.Row="5" Name="SelectedCakeImage" HorizontalAlignment="Right" Source="Images\Designs\CakeBackground.jpg" Margin="15,15,0,15"> </Image>
+            <Image Grid.Row="5" Grid.ColumnSpan="2" Name="SelectedCakeImage" HorizontalAlignment="Center" Source="Images\Designs\CakeBackground.jpg" Margin="10"></Image>
 
         </Grid>
 
-        <ListView x:Name="ImageList" Grid.Column="1" Grid.Row="0"  >
+        <ListView x:Name="ImageList" Grid.Column="1" Grid.Row="0"  Opacity="0.875">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Width="{Binding RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type ListView}}, Path=ActualWidth}"/>

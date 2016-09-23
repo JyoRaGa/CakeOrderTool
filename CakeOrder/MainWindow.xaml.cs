@@ -64,6 +64,12 @@ namespace CakeOrder
             CakeDesign.SelectedDesign = design;
             LoadImage(CakeDesign.DesignImages[design.DesignNum]);
 
+            DesignView.DesignButton.DataContext = design;
+            ShapeView.DesignButton.DataContext = design;
+            SizeView.DesignButton.DataContext = design;
+            ColorView.DesignButton.DataContext = design;
+            FlavorView.DesignButton.DataContext = design;
+
             if (design.DesignNum == DesignEnum.Undefined)
             {
                 foreach (CakeDesign c in DesignView.ImageList.Items)
@@ -85,11 +91,11 @@ namespace CakeOrder
                 LoadImage(CakeShape.ShapeImages[shape.ShapeNum]);
             }
 
-            DesignView.SelectedShape.DataContext = shape;
-            ShapeView.SelectedShape.DataContext = shape;
-            SizeView.SelectedShape.DataContext = shape;
-            ColorView.SelectedShape.DataContext = shape;
-            FlavorView.SelectedShape.DataContext = shape;
+            DesignView.ShapeButton.DataContext = shape;
+            ShapeView.ShapeButton.DataContext = shape;
+            SizeView.ShapeButton.DataContext = shape;
+            ColorView.ShapeButton.DataContext = shape;
+            FlavorView.ShapeButton.DataContext = shape;
 
             if (shape.ShapeNum == ShapeEnum.Undefined)
             {
@@ -112,11 +118,11 @@ namespace CakeOrder
                 LoadImage(CakeSize.SizeImages[size.SizeNum]);
             }
 
-            DesignView.SelectedSize.DataContext = size;
-            ShapeView.SelectedSize.DataContext = size;
-            SizeView.SelectedSize.DataContext = size;
-            ColorView.SelectedSize.DataContext = size;
-            FlavorView.SelectedSize.DataContext = size;
+            DesignView.SizeButton.DataContext = size;
+            ShapeView.SizeButton.DataContext = size;
+            SizeView.SizeButton.DataContext = size;
+            ColorView.SizeButton.DataContext = size;
+            FlavorView.SizeButton.DataContext = size;
 
             if (size.SizeNum == SizeEnum.Undefined)
             {
@@ -138,11 +144,11 @@ namespace CakeOrder
                 LoadImage(CakeColor.ColorImages[color.ColorNum]);
             }
 
-            DesignView.SelectedColor.DataContext = color;
-            ShapeView.SelectedColor.DataContext = color;
-            SizeView.SelectedColor.DataContext = color;
-            ColorView.SelectedColor.DataContext = color;
-            FlavorView.SelectedColor.DataContext = color;
+            DesignView.ColorButton.DataContext = color;
+            ShapeView.ColorButton.DataContext = color;
+            SizeView.ColorButton.DataContext = color;
+            ColorView.ColorButton.DataContext = color;
+            FlavorView.ColorButton.DataContext = color;
 
             if (color.ColorNum == ColorEnum.Undefined)
             {
@@ -164,11 +170,11 @@ namespace CakeOrder
                 LoadImage(CakeFlavor.FlavorImages[flavor.FlavorNum]);
             }
 
-            DesignView.SelectedFlavor.DataContext = flavor;
-            ShapeView.SelectedFlavor.DataContext = flavor;
-            SizeView.SelectedFlavor.DataContext = flavor;
-            ColorView.SelectedFlavor.DataContext = flavor;
-            FlavorView.SelectedFlavor.DataContext = flavor;
+            DesignView.FlavorButton.DataContext = flavor;
+            ShapeView.FlavorButton.DataContext = flavor;
+            SizeView.FlavorButton.DataContext = flavor;
+            ColorView.FlavorButton.DataContext = flavor;
+            FlavorView.FlavorButton.DataContext = flavor;
 
             if (flavor.FlavorNum == FlavorEnum.Undefined)
             {
@@ -183,11 +189,11 @@ namespace CakeOrder
 
         public static void ClearSelection(Button b)
         {
-            if (b.Name.Equals("ClearDesign"))
+            if (b.Name.Equals("DesignButton"))
             {
                 CakeDesign.SelectedDesign = new CakeDesign
                 {
-                    DesignName = "Not Selected",
+                    DesignName = "Design : None",
                     DesignNum = DesignEnum.Undefined,
                     DefaultColor = ColorEnum.Blue,
                     DefaultShape = ShapeEnum.Rectangle,
@@ -203,11 +209,11 @@ namespace CakeOrder
                 
             }
 
-            else if (b.Name.Equals("ClearShape") || (b.Name.Equals("ClearSize")))
+            else if (b.Name.Equals("ShapeButton") || (b.Name.Equals("SizeButton")))
             {
                 CakeDesign.SelectedShape = new CakeShape
                 {
-                    ShapeName = "Not selected",
+                    ShapeName = "Shape : None",
                     ShapeNum = ShapeEnum.Undefined,
                 };
 
@@ -215,7 +221,7 @@ namespace CakeOrder
 
                 CakeDesign.SelectedSize = new CakeSize
                 {
-                    SizeName = "Not selected",
+                    SizeName = "Size : None",
                     SizeNum = SizeEnum.Undefined,
                     ShapeNum = ShapeEnum.Undefined,
                 };
@@ -223,22 +229,22 @@ namespace CakeOrder
                 SelectSize(CakeDesign.SelectedSize);
             }
 
-            else if (b.Name.Equals("ClearColor"))
+            else if (b.Name.Equals("ColorButton"))
             {
                 CakeDesign.SelectedColor = new CakeColor
                 {
-                    ColorName = "Not selected",
+                    ColorName = "Color : None",
                     ColorNum = ColorEnum.Undefined,
                 };
 
                 SelectColor(CakeDesign.SelectedColor);
             }
 
-            else if (b.Name.Equals("ClearFlavor"))
+            else if (b.Name.Equals("FlavorButton"))
             {
                 CakeDesign.SelectedFlavor = new CakeFlavor
                 {
-                    FlavorName = "Not selected",
+                    FlavorName = "Flavor : None",
                     FlavorNum = FlavorEnum.Undefined,
                 };
 

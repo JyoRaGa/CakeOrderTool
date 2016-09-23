@@ -18,65 +18,26 @@
         </Grid.Background>
         <Grid Name="ButtonGrid"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
             <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" Name="DesignButton" Margin="2" Click="DesignButton_Click">
-                Select a cake design
-            </Button>
+            <Button Grid.Row="0" Name="DesignButton" Margin="2" FontSize="16" FontWeight="Bold" Click="DesignButton_Click"/>
 
-            <Button Grid.Row="1" Name="ShapeButton" Margin="2" Click="ShapeButton_Click">
-                Select a cake shape
-            </Button>
+            <Button Grid.Row="1" Name="ShapeButton" Margin="2" FontSize="16" FontWeight="Bold" Click="ShapeButton_Click"/>
 
-            <Button Grid.Row="2" Name="SizeButton" Margin="2" Click="SizeButton_Click">
-                Select a cake size
-            </Button>
+            <Button Grid.Row="2" Name="SizeButton" Margin="2" FontSize="16" FontWeight="Bold" Click="SizeButton_Click" />
 
-            <Button Grid.Row="3" Name="ColorButton" Margin="2" Click="ColorButton_Click">
-                Select a cake color
-            </Button>
+            <Button Grid.Row="3" Name="ColorButton" Margin="2" FontSize="16" FontWeight="Bold" Click="ColorButton_Click" />
 
-            <Button Grid.Row="4" Name="FlavorButton" Margin="2" Click="FlavorButton_Click">
-                Select a cake Flavor
-            </Button>
+            <Button Grid.Row="4" Name="FlavorButton" Margin="2" FontSize="16" FontWeight="Bold" Click="FlavorButton_Click"/>
 
-            <Button Name ="ClearDesign" Grid.Row="5" Margin="0" Click="SelectionButton_Click" Content=""></Button>
             <Image Grid.Row="5" Name="SelectedCakeImage" Margin="10" Source="Images\Designs\CakeBackground.jpg"> </Image>
-            <Grid Grid.Row="6" Name="SelectionGrid"  VerticalAlignment="Top">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Button Name ="ClearShape" Grid.Row="0" Grid.Column="0"  Width="200" Click="SelectionButton_Click"></Button>
-                <TextBlock Grid.Row="0" Grid.Column="0"  Text ="Shape" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
-                <TextBlock Name ="SelectedShape" Grid.Row="0" Grid.Column="0"  Margin="8" VerticalAlignment="Bottom"
-                          HorizontalAlignment="Center"  Text ="Not Selected" />
-                <Button Name ="ClearSize" Grid.Row="0" Grid.Column="1"  Width="200" Click="SelectionButton_Click"></Button>
-                <TextBlock Grid.Row="0" Grid.Column="1"  Text ="Size" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
-                <TextBlock Name ="SelectedSize" Grid.Row="0" Grid.Column="1"  Margin="8" VerticalAlignment="Bottom"
-                          HorizontalAlignment="Center"  Text ="Not Selected" />
-                <Button Name ="ClearColor" Grid.Row="1" Grid.Column="0"  Width="200" Click="SelectionButton_Click"></Button>
-                <TextBlock Grid.Row="1" Grid.Column="0"  Text ="Color" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
-                <TextBlock Name ="SelectedColor" Grid.Row="1" Grid.Column="0"  Margin="8" VerticalAlignment="Bottom"
-                          HorizontalAlignment="Center"  Text ="Not Selected" />
-                <Button Name ="ClearFlavor" Grid.Row="1" Grid.Column="1"  Width="200" Click="SelectionButton_Click"></Button>
-                <TextBlock Grid.Row="1" Grid.Column="1"  Text ="Flavor" Margin="4" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" ></TextBlock>
-                <TextBlock Name ="SelectedFlavor" Grid.Row="1" Grid.Column="1"  Margin="8" VerticalAlignment="Bottom"
-                          HorizontalAlignment="Center"  Text ="Not Selected" />
-            </Grid>
+
         </Grid>
 
         <ListView x:Name="ImageList" Grid.Column="1" Grid.Row="0"  >

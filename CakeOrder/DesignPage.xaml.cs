@@ -27,29 +27,35 @@ namespace CakeOrder
 
             LoadImageList();
 
+            Binding designBinding = new Binding();
+            designBinding.Path = new PropertyPath("DesignName");
+            designBinding.Mode = BindingMode.OneTime;
+            DesignButton.DataContext = CakeDesign.SelectedDesign;
+            DesignButton.SetBinding(Button.ContentProperty, designBinding);
+
             Binding shapeBinding = new Binding();
             shapeBinding.Path = new PropertyPath("ShapeName");
             shapeBinding.Mode = BindingMode.OneTime;
-            SelectedShape.DataContext = CakeDesign.SelectedShape;
-            SelectedShape.SetBinding(TextBlock.TextProperty, shapeBinding);
+            ShapeButton.DataContext = CakeDesign.SelectedShape;
+            ShapeButton.SetBinding(Button.ContentProperty, shapeBinding);
 
             Binding sizeBinding = new Binding();
             sizeBinding.Path = new PropertyPath("SizeName");
             sizeBinding.Mode = BindingMode.OneTime;
-            SelectedSize.DataContext = CakeDesign.SelectedSize;
-            SelectedSize.SetBinding(TextBlock.TextProperty, sizeBinding);
+            SizeButton.DataContext = CakeDesign.SelectedSize;
+            SizeButton.SetBinding(Button.ContentProperty, sizeBinding);
 
             Binding colorBinding = new Binding();
             colorBinding.Path = new PropertyPath("ColorName");
             colorBinding.Mode = BindingMode.OneTime;
-            SelectedColor.DataContext = CakeDesign.SelectedColor;
-            SelectedColor.SetBinding(TextBlock.TextProperty, colorBinding);
+            ColorButton.DataContext = CakeDesign.SelectedColor;
+            ColorButton.SetBinding(Button.ContentProperty, colorBinding);
 
             Binding flavorBinding = new Binding();
             flavorBinding.Path = new PropertyPath("FlavorName");
             flavorBinding.Mode = BindingMode.OneTime;
-            SelectedFlavor.DataContext = CakeDesign.SelectedFlavor;
-            SelectedFlavor.SetBinding(TextBlock.TextProperty, flavorBinding);
+            FlavorButton.DataContext = CakeDesign.SelectedFlavor;
+            FlavorButton.SetBinding(Button.ContentProperty, flavorBinding);
         }
 
         public void LoadImageList()
@@ -76,26 +82,31 @@ namespace CakeOrder
 
         private void DesignButton_Click(object sender, RoutedEventArgs e)
         {
+            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.DesignView);
         }
 
         private void ShapeButton_Click(object sender, RoutedEventArgs e)
         {
+            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.ShapeView);
         }
 
         private void SizeButton_Click(object sender, RoutedEventArgs e)
         {
+            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.SizeView);
         }
 
         private void ColorButton_Click(object sender, RoutedEventArgs e)
         {
+            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.ColorView);
         }
 
         private void FlavorButton_Click(object sender, RoutedEventArgs e)
         {
+            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.FlavorView);
         }
 

@@ -81,37 +81,32 @@ namespace CakeOrder
 
         private void DesignButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.DesignView);
         }
 
         private void ShapeButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.ShapeView);
         }
 
         private void SizeButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.SizeView);
         }
 
         private void ColorButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.ColorView);
         }
 
         private void FlavorButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectionButton_Click(sender, e);
             this.NavigationService.Navigate(MainWindow.FlavorView);
         }
 
         private void SelectionButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.ClearSelection((Button)sender);
+            ((MainWindow)Parent).ClearSelection((Button)sender);
         }
     }
 }

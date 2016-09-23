@@ -181,7 +181,7 @@ namespace CakeOrder
             }
         }
 
-        public static void ClearSelection(Button b)
+        public void ClearSelection(Button b)
         {
             if (b.Name.Equals("ClearDesign"))
             {
@@ -200,7 +200,7 @@ namespace CakeOrder
                 };
 
                 SelectDesign(CakeDesign.SelectedDesign);
-                
+                NavigationService.Navigate(DesignView); 
             }
 
             else if (b.Name.Equals("ClearShape") || (b.Name.Equals("ClearSize")))
@@ -221,6 +221,16 @@ namespace CakeOrder
                 };
 
                 SelectSize(CakeDesign.SelectedSize);
+
+                if (b.Name.Equals("ClearShape"))
+                {
+                    NavigationService.Navigate(ShapeView);
+                }
+                else
+                {
+                    NavigationService.Navigate(SizeView);
+                }
+
             }
 
             else if (b.Name.Equals("ClearColor"))
@@ -232,6 +242,7 @@ namespace CakeOrder
                 };
 
                 SelectColor(CakeDesign.SelectedColor);
+                NavigationService.Navigate(ColorView);
             }
 
             else if (b.Name.Equals("ClearFlavor"))
@@ -243,6 +254,7 @@ namespace CakeOrder
                 };
 
                 SelectFlavor(CakeDesign.SelectedFlavor);
+                NavigationService.Navigate(FlavorView);
             }
         }
     }

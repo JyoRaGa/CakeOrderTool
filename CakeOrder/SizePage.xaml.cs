@@ -121,8 +121,8 @@ namespace CakeOrder
             this.NavigationService.Navigate(MainWindow.FlavorView);
         }
         private void SelectionButton_Click(object sender, RoutedEventArgs e)
-        {            
-            MainWindow.ClearSelection((Button)sender);
+        {
+            ((MainWindow)Parent).ClearSelection((Button)sender);
         }
     }
 }

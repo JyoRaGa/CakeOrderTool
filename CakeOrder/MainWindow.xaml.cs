@@ -244,7 +244,7 @@ namespace CakeOrder
                 this.NavigationService.Navigate(DesignView);
             }
 
-            else if (b.Name.Equals("ShapeClearButton") || (b.Name.Equals("SizeClearButton")))
+            else if (b.Name.Equals("ShapeClearButton"))
             {
                 CakeDesign.SelectedShape = new CakeShape
                 {
@@ -254,6 +254,11 @@ namespace CakeOrder
 
                 SelectShape(CakeDesign.SelectedShape);
 
+                this.NavigationService.Navigate(ShapeView);
+            }
+
+            else if (b.Name.Equals("SizeClearButton"))
+            {
                 CakeDesign.SelectedSize = new CakeSize
                 {
                     SizeName = "Size : None",
@@ -263,9 +268,7 @@ namespace CakeOrder
 
                 SelectSize(CakeDesign.SelectedSize);
 
-
-                if (b.Name.Equals("SizeClearButton")) this.NavigationService.Navigate(SizeView);
-                if (b.Name.Equals("ShapeClearButton")) this.NavigationService.Navigate(ShapeView);
+                this.NavigationService.Navigate(SizeView);
             }
 
             else if (b.Name.Equals("ColorClearButton"))

@@ -81,6 +81,11 @@ namespace CakeOrder
                 {
                     c.Enabled = true;
                     c.ShapeImage.Opacity = 1;
+
+                    if (c.ShapeNum == CakeDesign.SelectedShape.ShapeNum)
+                    {
+                        c.Selected = true;
+                    }
                 }
                 else
                 {

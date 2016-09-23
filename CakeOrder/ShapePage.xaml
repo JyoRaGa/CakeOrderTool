@@ -65,7 +65,7 @@
                     <StackPanel>
                         <RadioButton Name ="ItemCheck" GroupName ="ShapeGroup"  Grid.Column="1"  
                                      Content="{Binding ShapeName}" Width="150" 
-                                     Checked="ItemChecked" IsEnabled="{Binding Enabled}"/>
+                                     Checked="ItemChecked" IsEnabled="{Binding Enabled}" IsChecked="{Binding Selected}"/>
                         <ContentControl Margin="3" Content="{Binding ShapeImage}" Width="150"/>
                     </StackPanel>
                 </DataTemplate>

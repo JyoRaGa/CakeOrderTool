@@ -78,11 +78,16 @@ namespace CakeOrder
 
                 if (CakeDesign.SelectedShape.ShapeNum == ShapeEnum.Undefined ||
                     (CakeDesign.SelectedShape.ShapeNum != ShapeEnum.Undefined &&
-                DesignLists.DefaultSizesList.Exists(x => (x.ShapeNum == CakeDesign.SelectedShape.ShapeNum) && (x.SizeNum == c.SizeNum)))
+                        DesignLists.DefaultSizesList.Exists(x => (x.ShapeNum == CakeDesign.SelectedShape.ShapeNum) && (x.SizeNum == c.SizeNum)))
                 )
                 {
                     c.Enabled = true;
                     c.SizeImage.Opacity = 1;
+
+                    if (c.SizeNum == CakeDesign.SelectedSize.SizeNum)
+                    {
+                        c.Selected = true;
+                    }
                 }
                 else
                 {

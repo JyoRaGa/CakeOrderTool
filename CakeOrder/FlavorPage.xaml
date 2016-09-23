@@ -18,15 +18,15 @@
         </Grid.Background>
         <Grid Name="ButtonGrid"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
             <Grid.RowDefinitions>
-                <RowDefinition Height="90"/>
-                <RowDefinition Height="90"/>
-                <RowDefinition Height="90"/>
-                <RowDefinition Height="90"/>
-                <RowDefinition Height="90"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="325"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
@@ -34,23 +34,24 @@
             <Button Grid.Row="0" Grid.Column="1" Name="DesignClearButton" Content="X" Margin="0,2,2,2" FontSize="16" FontWeight="Bold" 
                     IsEnabled="false"  Click="SelectionButton_Click"/>
 
-            <Button Grid.Row="1" Grid.Column="0" Name="ShapeButton" Margin="2" FontSize="16" FontWeight="Bold" Click="ShapeButton_Click"/>
+            <Button Grid.Row="1" Grid.Column="0" Name="ShapeButton" Margin="2,2,0,2" FontSize="16" FontWeight="Bold" Click="ShapeButton_Click"/>
             <Button Grid.Row="1" Grid.Column="1" Name="ShapeClearButton" Content="X" Margin="0,2,2,2" FontSize="16" FontWeight="Bold" 
                     IsEnabled="false"  Click="SelectionButton_Click"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Name="SizeButton" Margin="2" FontSize="16" FontWeight="Bold" Click="SizeButton_Click" />
+            <Button Grid.Row="2" Grid.Column="0" Name="SizeButton" Margin="2,2,0,2" FontSize="16" FontWeight="Bold" Click="SizeButton_Click" />
             <Button Grid.Row="2" Grid.Column="1" Name="SizeClearButton" Content="X" Margin="0,2,2,2" FontSize="16" FontWeight="Bold" 
                     IsEnabled="false"  Click="SelectionButton_Click"/>
 
-            <Button Grid.Row="3" Grid.Column="0" Name="ColorButton" Margin="2" FontSize="16" FontWeight="Bold" Click="ColorButton_Click" />
+            <Button Grid.Row="3" Grid.Column="0" Name="ColorButton" Margin="2,2,0,2" FontSize="16" FontWeight="Bold" Click="ColorButton_Click" />
             <Button Grid.Row="3" Grid.Column="1" Name="ColorClearButton" Content="X" Margin="0,2,2,2" FontSize="16" FontWeight="Bold" 
                     IsEnabled="false"  Click="SelectionButton_Click"/>
 
-            <Button Grid.Row="4" Grid.Column="0" Name="FlavorButton" Margin="2" FontSize="16" FontWeight="Bold" Click="FlavorButton_Click"/>
+            <Button Grid.Row="4" Grid.Column="0" Name="FlavorButton" Margin="2,2,0,2" FontSize="16" FontWeight="Bold" Click="FlavorButton_Click"/>
             <Button Grid.Row="4" Grid.Column="1" Name="FlavorClearButton" Content="X" Margin="0,2,2,2" FontSize="16" FontWeight="Bold" 
                     IsEnabled="false"  Click="SelectionButton_Click"/>
 
-            <Image Grid.Row="5" Name="SelectedCakeImage" Margin="10" Source="Images\Designs\CakeBackground.jpg"></Image>
+            <Image Grid.Row="5" Name="SelectedCakeImage" HorizontalAlignment="Right" Source="Images\Designs\CakeBackground.jpg" Margin="15,15,0,15"></Image>
+
         </Grid>
 
         <ListView x:Name="ImageList" Grid.Column="1" Grid.Row="0"  >

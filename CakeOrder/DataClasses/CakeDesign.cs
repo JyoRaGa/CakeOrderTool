@@ -641,7 +641,7 @@ namespace CakeOrder.DataClasses
             SizeImages = new Dictionary<SizeEnum, string>();
             SizeImages.Add(SizeEnum.Undefined, @"Images\Designs\CakeBackground.jpg");
             SizeImages.Add(SizeEnum.SixInchRound, @"Images\Sizes\SixInch.jpg");
-            SizeImages.Add(SizeEnum.NineInchRound, @"Images\Sizes : ineInch.jpg");
+            SizeImages.Add(SizeEnum.NineInchRound, @"Images\Sizes\NineInch.jpg");
             SizeImages.Add(SizeEnum.HalfSheet, @"Images\Sizes\HalfSheet.jpg");
             SizeImages.Add(SizeEnum.FullSheet, @"Images\Sizes\FullSheet.jpg");
             SizeImages.Add(SizeEnum.DoubleSheet, @"Images\Sizes\DoubleSheet.jpg");

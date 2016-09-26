@@ -104,6 +104,16 @@ namespace CakeOrder
 
             MainWindow.SelectShape(cs);
         }
+
+        private void ItemClicked(object sender, RoutedEventArgs e)
+        {
+            Button c = (Button)sender;
+            CakeShape cs = (CakeShape)c.DataContext;
+
+            MainWindow.SelectShape(cs);
+            ((RadioButton)((StackPanel)c.Parent).Children[0]).IsChecked = true;
+        }
+
         private void DesignButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(MainWindow.DesignView);

@@ -66,7 +66,7 @@
                         <RadioButton Name ="ItemCheck" GroupName ="SizeGroup" Grid.Column="1"  
                                      Content="{Binding SizeName}" Width="150" 
                                      Checked="ItemChecked" IsEnabled="{Binding Enabled}" IsChecked="{Binding Selected}"/>
-                        <ContentControl Margin="3" Content="{Binding SizeImage}" Width="150"/>
+                        <Button Margin="3" Content="{Binding SizeImage}" Width="150" Click="ItemClicked"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

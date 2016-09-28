@@ -64,9 +64,9 @@
                 <DataTemplate DataType="{x:Type local:CakeShape}">
                     <StackPanel>
                         <RadioButton Name ="ItemCheck" GroupName ="ShapeGroup"  Grid.Column="1"  
-                                     Content="{Binding ShapeName}" Width="150" 
+                                     Content="{Binding ShapeName}" Width="220" FontSize="14"
                                      Checked="ItemChecked" IsEnabled="{Binding Enabled}" IsChecked="{Binding Selected}"/>
-                        <Button Margin="3" Content="{Binding ShapeImage}" Width="150" Click="ItemClicked"/>
+                        <Button Margin="3" Content="{Binding ShapeImage}" Width="220" Click="ItemClicked"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -64,9 +64,9 @@
                 <DataTemplate DataType="{x:Type local:CakeColor}">
                     <StackPanel>
                         <RadioButton Name ="ItemCheck" GroupName ="ColorGroup"  Grid.Column="1"  
-                                     Content="{Binding ColorName}" Width="150" 
+                                     Content="{Binding ColorName}" Width="220" FontSize="14"
                                      Checked="ItemChecked" IsChecked="{Binding Selected}"/>
-                        <Button Margin="3" Content="{Binding ColorImage}" Width="150" Click="ItemClicked"/>
+                        <Button Margin="3" Content="{Binding ColorImage}" Width="220" Click="ItemClicked"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
